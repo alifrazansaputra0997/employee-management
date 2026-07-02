@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { Users } from '@services/users/users';
+
 @Component({
   selector: 'app-login',
   imports: [
@@ -21,10 +23,13 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 })
 export class Login implements OnInit {
   loginForm!: FormGroup;
+  private usersService = inject(Users);
+
   constructor() { }
 
   ngOnInit(): void {
     this.initForm();
+    this.usersService.getUsers().subscribe(res => console.log('USERS', res))
   }
 
   initForm() {
@@ -42,6 +47,8 @@ export class Login implements OnInit {
       console.log('VALID')
     }
   }
+
+
 
 
 }
