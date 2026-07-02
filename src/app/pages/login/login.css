@@ -1,0 +1,12 @@
+::ng-deep .mat-mdc-unelevated-button:not(:disabled) {
+  background: #8e54ff !important;
+}
+::ng-deep .mat-mdc-card {
+  border-radius: none !important;
+}
+
+:host ::ng-deep .mat-mdc-card {
+  border-radius: 0 !important;
+  overflow: hidden;
+}
+/*  */

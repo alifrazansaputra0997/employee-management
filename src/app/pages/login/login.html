@@ -1,0 +1,44 @@
+<div class="flex min-h-screen items-center justify-center bg-gradient-to-br from-violet-500 to-zinc-300 ">
+    <mat-card class="w-full max-w-5xl mx-4 bg-white shadow-3xl h-auto rounded-none md:h-[550px]">
+        <div class="flex flex-col md:flex-row h-full">
+            <div class="banner-section  hidden md:block overflow-hidden w-full md:w-1/2 ">
+                <img src="/assets/img-login.jpg" class="w-full h-full object-cover" />
+                <p class="absolute bottom-0.5 left-0.5 text-gray-700">Photo by <a href="https://unsplash.com/@srosinger3997?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Samantha Gades</a> on <a href="https://unsplash.com/photos/white-desk-lamp-beside-green-plant-BlIhVfXbi9s?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
+            </div>
+            <div class="items-center flex justify-center login-section w-full max-w-md mx-auto md:w-1/2 px-8 py-16">
+                <div class="flex flex-col gap-12 w-full">
+                    <h1 class="text-3xl text-center font-medium">Sign In</h1>
+                    <form [formGroup]="loginForm">
+                        <div class="flex flex-col gap-8 max-w-md">
+                            <mat-form-field class="w-full text-sm primeng-input" appearance="outline"
+                                hideRequiredMarker="true">
+                                <mat-label>Username</mat-label>
+                                <input matInput placeholder="Username" class="text-sm" formControlName="username" />
+                                @if (loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty ||
+                                loginForm.get('username')?.touched)) {
+                                <mat-hint>Hint</mat-hint>
+                                }
+                            </mat-form-field>
+                            <mat-form-field class="w-full text-sm primeng-input" appearance="outline"
+                                hideRequiredMarker="true">
+                                <mat-label>Password</mat-label>
+                                <input matInput placeholder="Password" class="text-sm" formControlName="password" />
+                                @if (loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty ||
+                                loginForm.get('password')?.touched)) {
+                                <mat-hint>Hint</mat-hint>
+                                }
+                            </mat-form-field>
+                            <div class="flex flex-col">
+                                <button matButton="filled" (click)="onLogin()">SIGN IN</button>
+                                <section class="remember-me-section">
+                                    <mat-checkbox>Remember me?</mat-checkbox>
+                                </section>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </mat-card>
+</div>
