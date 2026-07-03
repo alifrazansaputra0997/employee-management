@@ -18,6 +18,10 @@
     "paths": {
       "@pages/*": ["src/app/pages/*"],
       "@services/*": ["src/app/services/*"],
+      "@components/*": ["src/app/components/*"],
+      "@config/*": ["src/app/config/*"],
+      "@template/*": ["src/app/template/*"],
+      "@guards/*": ["src/app/guards/*"],
     }
   },
   "angularCompilerOptions": {

@@ -9,7 +9,8 @@
       "basicSalary": 9416085,
       "status": "PERMANENT",
       "group": "Customer Service",
-      "description": "2024-01-24T02:19:04.414Z"
+      "description": "2024-01-24T02:19:04.414Z",
+      "password": "12345"
     },
     {
       "username": "nina60",
@@ -20,7 +21,8 @@
       "basicSalary": 8703077,
       "status": "CONTRACT",
       "group": "Human Resources",
-      "description": "2024-02-03T00:10:38.057Z"
+      "description": "2024-02-03T00:10:38.057Z",
+      "password": "12345"
     },
     {
       "username": "yholloway",
@@ -31,7 +33,8 @@
       "basicSalary": 13257378,
       "status": "PERMANENT",
       "group": "IT",
-      "description": "2025-11-05T01:25:35.909Z"
+      "description": "2025-11-05T01:25:35.909Z",
+      "password": "12345"
     },
     {
       "username": "savagenicole",
@@ -42,7 +45,8 @@
       "basicSalary": 13728014,
       "status": "CONTRACT",
       "group": "Procurement",
-      "description": "2026-06-29T14:48:41.491Z"
+      "description": "2026-06-29T14:48:41.491Z",
+      "password": "12345"
     },
     {
       "username": "jbailey",
@@ -53,7 +57,8 @@
       "basicSalary": 6045068,
       "status": "CONTRACT",
       "group": "Procurement",
-      "description": "2020-12-09T18:23:43.537Z"
+      "description": "2020-12-09T18:23:43.537Z",
+      "password": "12345"
     },
     {
       "username": "russovanessa",
@@ -64,7 +69,8 @@
       "basicSalary": 12814667,
       "status": "PERMANENT",
       "group": "Finance",
-      "description": "2026-01-11T05:16:08.166Z"
+      "description": "2026-01-11T05:16:08.166Z",
+      "password": "12345"
     },
     {
       "username": "sergio49",
@@ -75,7 +81,8 @@
       "basicSalary": 13250402,
       "status": "PERMANENT",
       "group": "Engineering",
-      "description": "2020-09-21T13:05:36.780Z"
+      "description": "2020-09-21T13:05:36.780Z",
+      "password": "12345"
     },
     {
       "username": "josephsnow",
@@ -86,7 +93,8 @@
       "basicSalary": 6720140,
       "status": "CONTRACT",
       "group": "Operations",
-      "description": "2024-01-04T13:56:39.033Z"
+      "description": "2024-01-04T13:56:39.033Z",
+      "password": "12345"
     },
     {
       "username": "simonrodney",
@@ -97,7 +105,8 @@
       "basicSalary": 7196854,
       "status": "PERMANENT",
       "group": "IT",
-      "description": "2023-05-13T17:34:41.504Z"
+      "description": "2023-05-13T17:34:41.504Z",
+      "password": "12345"
     },
     {
       "username": "iolson",
@@ -108,7 +117,8 @@
       "basicSalary": 7806494,
       "status": "PERMANENT",
       "group": "Finance",
-      "description": "2024-08-26T20:42:10.511Z"
+      "description": "2024-08-26T20:42:10.511Z",
+      "password": "12345"
     },
     {
       "username": "mooreantonio",
@@ -119,7 +129,8 @@
       "basicSalary": 10589347,
       "status": "CONTRACT",
       "group": "Legal",
-      "description": "2022-02-23T22:25:52.417Z"
+      "description": "2022-02-23T22:25:52.417Z",
+      "password": "12345"
     },
     {
       "username": "alexander05",
@@ -130,7 +141,8 @@
       "basicSalary": 13284851,
       "status": "CONTRACT",
       "group": "IT",
-      "description": "2024-02-26T07:20:26.795Z"
+      "description": "2024-02-26T07:20:26.795Z",
+      "password": "12345"
     },
     {
       "username": "olsentodd",
@@ -141,7 +153,8 @@
       "basicSalary": 14406396,
       "status": "PERMANENT",
       "group": "Finance",
-      "description": "2020-11-04T07:03:42.555Z"
+      "description": "2020-11-04T07:03:42.555Z",
+      "password": "12345"
     },
     {
       "username": "melissaobrien",
@@ -152,7 +165,8 @@
       "basicSalary": 5184248,
       "status": "CONTRACT",
       "group": "Legal",
-      "description": "2023-03-21T10:05:12.522Z"
+      "description": "2023-03-21T10:05:12.522Z",
+      "password": "12345"
     },
     {
       "username": "amberpayne",
@@ -163,7 +177,8 @@
       "basicSalary": 7620565,
       "status": "PERMANENT",
       "group": "Engineering",
-      "description": "2021-10-04T01:49:15.746Z"
+      "description": "2021-10-04T01:49:15.746Z",
+      "password": "12345"
     },
     {
       "username": "wrightpatricia",
@@ -174,7 +189,8 @@
       "basicSalary": 13493327,
       "status": "CONTRACT",
       "group": "IT",
-      "description": "2021-02-10T17:06:19.046Z"
+      "description": "2021-02-10T17:06:19.046Z",
+      "password": "12345"
     },
     {
       "username": "hwilliams",
@@ -185,7 +201,8 @@
       "basicSalary": 7367459,
       "status": "PERMANENT",
       "group": "Customer Service",
-      "description": "2021-08-15T12:00:20.548Z"
+      "description": "2021-08-15T12:00:20.548Z",
+      "password": "12345"
     },
     {
       "username": "brandonesparza",
@@ -196,7 +213,8 @@
       "basicSalary": 6291164,
       "status": "CONTRACT",
       "group": "Sales",
-      "description": "2021-02-09T03:58:31.316Z"
+      "description": "2021-02-09T03:58:31.316Z",
+      "password": "12345"
     },
     {
       "username": "nolantasha",
@@ -207,7 +225,8 @@
       "basicSalary": 6135275,
       "status": "CONTRACT",
       "group": "Legal",
-      "description": "2026-05-27T22:54:59.088Z"
+      "description": "2026-05-27T22:54:59.088Z",
+      "password": "12345"
     },
     {
       "username": "daniellehall",
@@ -218,7 +237,8 @@
       "basicSalary": 13414735,
       "status": "PERMANENT",
       "group": "Procurement",
-      "description": "2020-05-08T03:17:05.261Z"
+      "description": "2020-05-08T03:17:05.261Z",
+      "password": "12345"
     },
     {
       "username": "kbrown",
@@ -229,7 +249,8 @@
       "basicSalary": 13282773,
       "status": "CONTRACT",
       "group": "Finance",
-      "description": "2022-01-01T23:51:20.359Z"
+      "description": "2022-01-01T23:51:20.359Z",
+      "password": "12345"
     },
     {
       "username": "duncananna",
@@ -240,7 +261,8 @@
       "basicSalary": 8342066,
       "status": "CONTRACT",
       "group": "Operations",
-      "description": "2025-09-05T06:50:37.765Z"
+      "description": "2025-09-05T06:50:37.765Z",
+      "password": "12345"
     },
     {
       "username": "stephaniemcbride",
@@ -251,7 +273,8 @@
       "basicSalary": 8988930,
       "status": "CONTRACT",
       "group": "Operations",
-      "description": "2022-07-18T09:34:14.087Z"
+      "description": "2022-07-18T09:34:14.087Z",
+      "password": "12345"
     },
     {
       "username": "edgar02",
@@ -262,7 +285,8 @@
       "basicSalary": 6666456,
       "status": "PERMANENT",
       "group": "Human Resources",
-      "description": "2025-03-02T14:45:47.922Z"
+      "description": "2025-03-02T14:45:47.922Z",
+      "password": "12345"
     },
     {
       "username": "christinalewis",
@@ -273,7 +297,8 @@
       "basicSalary": 9075198,
       "status": "PERMANENT",
       "group": "Human Resources",
-      "description": "2024-05-11T12:16:22.299Z"
+      "description": "2024-05-11T12:16:22.299Z",
+      "password": "12345"
     },
     {
       "username": "heatherkelley",
@@ -284,7 +309,8 @@
       "basicSalary": 13817856,
       "status": "CONTRACT",
       "group": "Finance",
-      "description": "2020-07-10T00:39:52.921Z"
+      "description": "2020-07-10T00:39:52.921Z",
+      "password": "12345"
     },
     {
       "username": "vvang",
@@ -295,7 +321,8 @@
       "basicSalary": 13394929,
       "status": "CONTRACT",
       "group": "Operations",
-      "description": "2021-04-08T10:33:37.622Z"
+      "description": "2021-04-08T10:33:37.622Z",
+      "password": "12345"
     },
     {
       "username": "peter40",
@@ -306,7 +333,8 @@
       "basicSalary": 5796252,
       "status": "PERMANENT",
       "group": "Procurement",
-      "description": "2024-10-31T01:38:20.668Z"
+      "description": "2024-10-31T01:38:20.668Z",
+      "password": "12345"
     },
     {
       "username": "oscarchase",
@@ -317,7 +345,8 @@
       "basicSalary": 9118084,
       "status": "PERMANENT",
       "group": "Legal",
-      "description": "2021-08-13T16:07:11.523Z"
+      "description": "2021-08-13T16:07:11.523Z",
+      "password": "12345"
     },
     {
       "username": "timothyjones",
@@ -328,7 +357,8 @@
       "basicSalary": 5027194,
       "status": "PERMANENT",
       "group": "Legal",
-      "description": "2023-10-16T10:03:34.743Z"
+      "description": "2023-10-16T10:03:34.743Z",
+      "password": "12345"
     },
     {
       "username": "acummings",
@@ -339,7 +369,8 @@
       "basicSalary": 14096358,
       "status": "PERMANENT",
       "group": "Legal",
-      "description": "2021-09-06T04:52:14.882Z"
+      "description": "2021-09-06T04:52:14.882Z",
+      "password": "12345"
     },
     {
       "username": "beasleyanthony",
@@ -350,7 +381,8 @@
       "basicSalary": 10087203,
       "status": "CONTRACT",
       "group": "Human Resources",
-      "description": "2022-07-07T00:18:00.363Z"
+      "description": "2022-07-07T00:18:00.363Z",
+      "password": "12345"
     },
     {
       "username": "victoria37",
@@ -361,7 +393,8 @@
       "basicSalary": 10358445,
       "status": "PERMANENT",
       "group": "Sales",
-      "description": "2020-11-01T22:21:51.699Z"
+      "description": "2020-11-01T22:21:51.699Z",
+      "password": "12345"
     },
     {
       "username": "josebrown",
@@ -372,7 +405,8 @@
       "basicSalary": 13508370,
       "status": "PERMANENT",
       "group": "IT",
-      "description": "2021-07-06T12:31:12.304Z"
+      "description": "2021-07-06T12:31:12.304Z",
+      "password": "12345"
     },
     {
       "username": "timothyparker",
@@ -383,7 +417,8 @@
       "basicSalary": 9388671,
       "status": "CONTRACT",
       "group": "Legal",
-      "description": "2026-03-19T12:27:42.885Z"
+      "description": "2026-03-19T12:27:42.885Z",
+      "password": "12345"
     },
     {
       "username": "shawmichelle",
@@ -394,7 +429,8 @@
       "basicSalary": 6598143,
       "status": "CONTRACT",
       "group": "Finance",
-      "description": "2022-02-03T22:45:34.768Z"
+      "description": "2022-02-03T22:45:34.768Z",
+      "password": "12345"
     },
     {
       "username": "christopher35",
@@ -405,7 +441,8 @@
       "basicSalary": 8979703,
       "status": "PERMANENT",
       "group": "Customer Service",
-      "description": "2024-12-09T03:41:39.474Z"
+      "description": "2024-12-09T03:41:39.474Z",
+      "password": "12345"
     },
     {
       "username": "carlsonthomas",
@@ -416,7 +453,8 @@
       "basicSalary": 13830513,
       "status": "PERMANENT",
       "group": "IT",
-      "description": "2021-07-17T19:36:12.318Z"
+      "description": "2021-07-17T19:36:12.318Z",
+      "password": "12345"
     },
     {
       "username": "john74",
@@ -427,7 +465,8 @@
       "basicSalary": 5601195,
       "status": "PERMANENT",
       "group": "Operations",
-      "description": "2020-04-08T00:34:45.444Z"
+      "description": "2020-04-08T00:34:45.444Z",
+      "password": "12345"
     },
     {
       "username": "chad59",
@@ -438,7 +477,8 @@
       "basicSalary": 6218320,
       "status": "CONTRACT",
       "group": "Finance",
-      "description": "2023-10-18T11:11:47.277Z"
+      "description": "2023-10-18T11:11:47.277Z",
+      "password": "12345"
     },
     {
       "username": "joneslisa",
@@ -449,7 +489,8 @@
       "basicSalary": 12257609,
       "status": "PERMANENT",
       "group": "Procurement",
-      "description": "2025-05-27T23:17:50.587Z"
+      "description": "2025-05-27T23:17:50.587Z",
+      "password": "12345"
     },
     {
       "username": "tina55",
@@ -460,7 +501,8 @@
       "basicSalary": 11716810,
       "status": "CONTRACT",
       "group": "Marketing",
-      "description": "2023-12-04T09:26:15.459Z"
+      "description": "2023-12-04T09:26:15.459Z",
+      "password": "12345"
     },
     {
       "username": "beckertommy",
@@ -471,7 +513,8 @@
       "basicSalary": 11328214,
       "status": "PERMANENT",
       "group": "Customer Service",
-      "description": "2023-12-05T01:53:31.739Z"
+      "description": "2023-12-05T01:53:31.739Z",
+      "password": "12345"
     },
     {
       "username": "jeremy23",
@@ -482,7 +525,8 @@
       "basicSalary": 11045666,
       "status": "CONTRACT",
       "group": "Finance",
-      "description": "2026-01-29T14:14:26.267Z"
+      "description": "2026-01-29T14:14:26.267Z",
+      "password": "12345"
     },
     {
       "username": "marklynn",
@@ -493,7 +537,8 @@
       "basicSalary": 14680617,
       "status": "PERMANENT",
       "group": "Legal",
-      "description": "2023-05-12T16:06:53.196Z"
+      "description": "2023-05-12T16:06:53.196Z",
+      "password": "12345"
     },
     {
       "username": "claudianguyen",
@@ -504,7 +549,8 @@
       "basicSalary": 9698586,
       "status": "CONTRACT",
       "group": "Customer Service",
-      "description": "2025-02-01T08:03:06.578Z"
+      "description": "2025-02-01T08:03:06.578Z",
+      "password": "12345"
     },
     {
       "username": "brennansydney",
@@ -515,7 +561,8 @@
       "basicSalary": 10204700,
       "status": "PERMANENT",
       "group": "Marketing",
-      "description": "2020-12-04T18:29:06.988Z"
+      "description": "2020-12-04T18:29:06.988Z",
+      "password": "12345"
     },
     {
       "username": "carol69",
@@ -526,7 +573,8 @@
       "basicSalary": 6727341,
       "status": "CONTRACT",
       "group": "Legal",
-      "description": "2026-03-16T07:39:22.064Z"
+      "description": "2026-03-16T07:39:22.064Z",
+      "password": "12345"
     },
     {
       "username": "cartercrystal",
@@ -537,7 +585,8 @@
       "basicSalary": 7624875,
       "status": "CONTRACT",
       "group": "Operations",
-      "description": "2025-10-23T17:29:56.693Z"
+      "description": "2025-10-23T17:29:56.693Z",
+      "password": "12345"
     },
     {
       "username": "dawn87",
@@ -548,7 +597,8 @@
       "basicSalary": 7227017,
       "status": "CONTRACT",
       "group": "Legal",
-      "description": "2023-03-24T09:41:38.601Z"
+      "description": "2023-03-24T09:41:38.601Z",
+      "password": "12345"
     },
     {
       "username": "allenalyssa",
@@ -559,7 +609,8 @@
       "basicSalary": 10471144,
       "status": "CONTRACT",
       "group": "Finance",
-      "description": "2025-08-29T17:08:25.050Z"
+      "description": "2025-08-29T17:08:25.050Z",
+      "password": "12345"
     },
     {
       "username": "savagematthew",
@@ -570,7 +621,8 @@
       "basicSalary": 7770242,
       "status": "CONTRACT",
       "group": "IT",
-      "description": "2022-01-13T02:31:23.300Z"
+      "description": "2022-01-13T02:31:23.300Z",
+      "password": "12345"
     },
     {
       "username": "gjohnson",
@@ -581,7 +633,8 @@
       "basicSalary": 6965005,
       "status": "PERMANENT",
       "group": "Engineering",
-      "description": "2024-01-28T09:55:48.720Z"
+      "description": "2024-01-28T09:55:48.720Z",
+      "password": "12345"
     },
     {
       "username": "tonizavala",
@@ -592,7 +645,8 @@
       "basicSalary": 11551862,
       "status": "CONTRACT",
       "group": "IT",
-      "description": "2021-05-29T22:28:45.736Z"
+      "description": "2021-05-29T22:28:45.736Z",
+      "password": "12345"
     },
     {
       "username": "mjones",
@@ -603,7 +657,8 @@
       "basicSalary": 12598387,
       "status": "CONTRACT",
       "group": "Finance",
-      "description": "2024-05-27T09:38:51.389Z"
+      "description": "2024-05-27T09:38:51.389Z",
+      "password": "12345"
     },
     {
       "username": "james36",
@@ -614,7 +669,8 @@
       "basicSalary": 8542106,
       "status": "PERMANENT",
       "group": "Human Resources",
-      "description": "2026-05-18T22:08:20.199Z"
+      "description": "2026-05-18T22:08:20.199Z",
+      "password": "12345"
     },
     {
       "username": "johnsdouglas",
@@ -625,7 +681,8 @@
       "basicSalary": 12244741,
       "status": "PERMANENT",
       "group": "Human Resources",
-      "description": "2023-11-23T22:00:10.941Z"
+      "description": "2023-11-23T22:00:10.941Z",
+      "password": "12345"
     },
     {
       "username": "john84",
@@ -636,7 +693,8 @@
       "basicSalary": 11950628,
       "status": "PERMANENT",
       "group": "Operations",
-      "description": "2022-06-29T09:40:39.718Z"
+      "description": "2022-06-29T09:40:39.718Z",
+      "password": "12345"
     },
     {
       "username": "lisawalker",
@@ -647,7 +705,8 @@
       "basicSalary": 12956244,
       "status": "PERMANENT",
       "group": "Legal",
-      "description": "2020-08-11T23:29:10.728Z"
+      "description": "2020-08-11T23:29:10.728Z",
+      "password": "12345"
     },
     {
       "username": "bcortez",
@@ -658,7 +717,8 @@
       "basicSalary": 12161517,
       "status": "PERMANENT",
       "group": "Engineering",
-      "description": "2024-02-04T13:40:04.254Z"
+      "description": "2024-02-04T13:40:04.254Z",
+      "password": "12345"
     },
     {
       "username": "kjames",
@@ -669,7 +729,8 @@
       "basicSalary": 7968538,
       "status": "CONTRACT",
       "group": "Finance",
-      "description": "2021-02-08T05:54:08.271Z"
+      "description": "2021-02-08T05:54:08.271Z",
+      "password": "12345"
     },
     {
       "username": "james68",
@@ -680,7 +741,8 @@
       "basicSalary": 8588427,
       "status": "PERMANENT",
       "group": "Legal",
-      "description": "2025-07-20T02:08:29.043Z"
+      "description": "2025-07-20T02:08:29.043Z",
+      "password": "12345"
     },
     {
       "username": "feliciadonovan",
@@ -691,7 +753,8 @@
       "basicSalary": 6359361,
       "status": "PERMANENT",
       "group": "Marketing",
-      "description": "2020-10-13T18:08:51.705Z"
+      "description": "2020-10-13T18:08:51.705Z",
+      "password": "12345"
     },
     {
       "username": "hicksbrian",
@@ -702,7 +765,8 @@
       "basicSalary": 5411837,
       "status": "PERMANENT",
       "group": "Legal",
-      "description": "2024-08-11T23:15:44.594Z"
+      "description": "2024-08-11T23:15:44.594Z",
+      "password": "12345"
     },
     {
       "username": "stewartadam",
@@ -713,7 +777,8 @@
       "basicSalary": 9600602,
       "status": "PERMANENT",
       "group": "Sales",
-      "description": "2024-11-14T14:34:43.550Z"
+      "description": "2024-11-14T14:34:43.550Z",
+      "password": "12345"
     },
     {
       "username": "dustinbauer",
@@ -724,7 +789,8 @@
       "basicSalary": 14801222,
       "status": "CONTRACT",
       "group": "Customer Service",
-      "description": "2022-01-21T18:10:05.803Z"
+      "description": "2022-01-21T18:10:05.803Z",
+      "password": "12345"
     },
     {
       "username": "pagerebecca",
@@ -735,7 +801,8 @@
       "basicSalary": 11438668,
       "status": "CONTRACT",
       "group": "Engineering",
-      "description": "2020-10-01T16:46:33.668Z"
+      "description": "2020-10-01T16:46:33.668Z",
+      "password": "12345"
     },
     {
       "username": "linda90",
@@ -746,7 +813,8 @@
       "basicSalary": 5801340,
       "status": "PERMANENT",
       "group": "Engineering",
-      "description": "2024-04-30T06:45:28.415Z"
+      "description": "2024-04-30T06:45:28.415Z",
+      "password": "12345"
     },
     {
       "username": "lhammond",
@@ -757,7 +825,8 @@
       "basicSalary": 14358421,
       "status": "CONTRACT",
       "group": "Engineering",
-      "description": "2024-05-14T02:02:14.035Z"
+      "description": "2024-05-14T02:02:14.035Z",
+      "password": "12345"
     },
     {
       "username": "xnelson",
@@ -768,7 +837,8 @@
       "basicSalary": 13279141,
       "status": "PERMANENT",
       "group": "Legal",
-      "description": "2020-12-28T01:59:43.395Z"
+      "description": "2020-12-28T01:59:43.395Z",
+      "password": "12345"
     },
     {
       "username": "bvega",
@@ -779,7 +849,8 @@
       "basicSalary": 9818832,
       "status": "PERMANENT",
       "group": "Legal",
-      "description": "2022-01-07T17:07:25.096Z"
+      "description": "2022-01-07T17:07:25.096Z",
+      "password": "12345"
     },
     {
       "username": "xmarsh",
@@ -790,7 +861,8 @@
       "basicSalary": 6683981,
       "status": "PERMANENT",
       "group": "IT",
-      "description": "2025-08-15T11:18:51.999Z"
+      "description": "2025-08-15T11:18:51.999Z",
+      "password": "12345"
     },
     {
       "username": "xmontes",
@@ -801,7 +873,8 @@
       "basicSalary": 13993909,
       "status": "PERMANENT",
       "group": "Procurement",
-      "description": "2021-01-24T09:54:49.777Z"
+      "description": "2021-01-24T09:54:49.777Z",
+      "password": "12345"
     },
     {
       "username": "jmorales",
@@ -812,7 +885,8 @@
       "basicSalary": 5895973,
       "status": "CONTRACT",
       "group": "Finance",
-      "description": "2022-06-18T14:06:07.405Z"
+      "description": "2022-06-18T14:06:07.405Z",
+      "password": "12345"
     },
     {
       "username": "walkerleah",
@@ -823,7 +897,8 @@
       "basicSalary": 11672385,
       "status": "CONTRACT",
       "group": "Finance",
-      "description": "2021-07-01T01:36:17.057Z"
+      "description": "2021-07-01T01:36:17.057Z",
+      "password": "12345"
     },
     {
       "username": "hhumphrey",
@@ -834,7 +909,8 @@
       "basicSalary": 11402090,
       "status": "PERMANENT",
       "group": "Customer Service",
-      "description": "2023-07-10T10:43:27.911Z"
+      "description": "2023-07-10T10:43:27.911Z",
+      "password": "12345"
     },
     {
       "username": "rojascourtney",
@@ -845,7 +921,8 @@
       "basicSalary": 13419226,
       "status": "CONTRACT",
       "group": "Engineering",
-      "description": "2020-02-08T08:46:29.335Z"
+      "description": "2020-02-08T08:46:29.335Z",
+      "password": "12345"
     },
     {
       "username": "xsmith",
@@ -856,7 +933,8 @@
       "basicSalary": 13933590,
       "status": "PERMANENT",
       "group": "IT",
-      "description": "2020-09-18T16:34:29.705Z"
+      "description": "2020-09-18T16:34:29.705Z",
+      "password": "12345"
     },
     {
       "username": "kevinbenton",
@@ -867,7 +945,8 @@
       "basicSalary": 5423964,
       "status": "CONTRACT",
       "group": "Operations",
-      "description": "2024-01-25T17:06:27.337Z"
+      "description": "2024-01-25T17:06:27.337Z",
+      "password": "12345"
     },
     {
       "username": "zgarrett",
@@ -878,7 +957,8 @@
       "basicSalary": 7826657,
       "status": "CONTRACT",
       "group": "Human Resources",
-      "description": "2020-06-14T19:49:02.717Z"
+      "description": "2020-06-14T19:49:02.717Z",
+      "password": "12345"
     },
     {
       "username": "glennandrew",
@@ -889,7 +969,8 @@
       "basicSalary": 13775614,
       "status": "CONTRACT",
       "group": "Sales",
-      "description": "2022-05-01T23:23:38.389Z"
+      "description": "2022-05-01T23:23:38.389Z",
+      "password": "12345"
     },
     {
       "username": "freemanmark",
@@ -900,7 +981,8 @@
       "basicSalary": 13900183,
       "status": "CONTRACT",
       "group": "Procurement",
-      "description": "2024-02-13T05:51:58.369Z"
+      "description": "2024-02-13T05:51:58.369Z",
+      "password": "12345"
     },
     {
       "username": "fosterlogan",
@@ -911,7 +993,8 @@
       "basicSalary": 14353023,
       "status": "CONTRACT",
       "group": "IT",
-      "description": "2025-01-21T01:33:15.085Z"
+      "description": "2025-01-21T01:33:15.085Z",
+      "password": "12345"
     },
     {
       "username": "lynchdavid",
@@ -922,7 +1005,8 @@
       "basicSalary": 10285376,
       "status": "CONTRACT",
       "group": "Operations",
-      "description": "2026-03-18T03:08:59.857Z"
+      "description": "2026-03-18T03:08:59.857Z",
+      "password": "12345"
     },
     {
       "username": "rebecca29",
@@ -933,7 +1017,8 @@
       "basicSalary": 13212387,
       "status": "CONTRACT",
       "group": "Customer Service",
-      "description": "2022-10-21T01:07:08.150Z"
+      "description": "2022-10-21T01:07:08.150Z",
+      "password": "12345"
     },
     {
       "username": "mjordan",
@@ -944,7 +1029,8 @@
       "basicSalary": 13668704,
       "status": "CONTRACT",
       "group": "Finance",
-      "description": "2022-07-03T10:02:08.483Z"
+      "description": "2022-07-03T10:02:08.483Z",
+      "password": "12345"
     },
     {
       "username": "rachelbailey",
@@ -955,7 +1041,8 @@
       "basicSalary": 11928390,
       "status": "PERMANENT",
       "group": "Sales",
-      "description": "2022-04-06T02:08:46.865Z"
+      "description": "2022-04-06T02:08:46.865Z",
+      "password": "12345"
     },
     {
       "username": "hendersondouglas",
@@ -966,7 +1053,8 @@
       "basicSalary": 8030332,
       "status": "PERMANENT",
       "group": "Human Resources",
-      "description": "2021-08-06T12:33:09.429Z"
+      "description": "2021-08-06T12:33:09.429Z",
+      "password": "12345"
     },
     {
       "username": "andrewburns",
@@ -977,7 +1065,8 @@
       "basicSalary": 5262435,
       "status": "PERMANENT",
       "group": "Finance",
-      "description": "2022-03-26T17:24:08.968Z"
+      "description": "2022-03-26T17:24:08.968Z",
+      "password": "12345"
     },
     {
       "username": "davidfernandez",
@@ -988,7 +1077,8 @@
       "basicSalary": 12855028,
       "status": "PERMANENT",
       "group": "Procurement",
-      "description": "2023-05-12T06:23:31.246Z"
+      "description": "2023-05-12T06:23:31.246Z",
+      "password": "12345"
     },
     {
       "username": "qclark",
@@ -999,7 +1089,8 @@
       "basicSalary": 6397262,
       "status": "PERMANENT",
       "group": "Human Resources",
-      "description": "2025-11-26T03:21:29.889Z"
+      "description": "2025-11-26T03:21:29.889Z",
+      "password": "12345"
     },
     {
       "username": "hartmonica",
@@ -1010,7 +1101,8 @@
       "basicSalary": 6759701,
       "status": "CONTRACT",
       "group": "Procurement",
-      "description": "2025-08-17T20:04:38.641Z"
+      "description": "2025-08-17T20:04:38.641Z",
+      "password": "12345"
     },
     {
       "username": "eric93",
@@ -1021,7 +1113,8 @@
       "basicSalary": 8450007,
       "status": "CONTRACT",
       "group": "Operations",
-      "description": "2026-02-27T23:37:37.601Z"
+      "description": "2026-02-27T23:37:37.601Z",
+      "password": "12345"
     },
     {
       "username": "eburton",
@@ -1032,7 +1125,8 @@
       "basicSalary": 7756281,
       "status": "CONTRACT",
       "group": "Engineering",
-      "description": "2021-05-11T05:36:37.923Z"
+      "description": "2021-05-11T05:36:37.923Z",
+      "password": "12345"
     },
     {
       "username": "susan44",
@@ -1043,7 +1137,8 @@
       "basicSalary": 5357815,
       "status": "PERMANENT",
       "group": "Operations",
-      "description": "2023-09-08T17:10:37.294Z"
+      "description": "2023-09-08T17:10:37.294Z",
+      "password": "12345"
     },
     {
       "username": "pholland",
@@ -1054,7 +1149,8 @@
       "basicSalary": 5249602,
       "status": "PERMANENT",
       "group": "Operations",
-      "description": "2025-04-30T22:11:22.224Z"
+      "description": "2025-04-30T22:11:22.224Z",
+      "password": "12345"
     },
     {
       "username": "tonysmith",
@@ -1065,7 +1161,8 @@
       "basicSalary": 5782412,
       "status": "PERMANENT",
       "group": "Sales",
-      "description": "2023-11-15T17:45:15.409Z"
+      "description": "2023-11-15T17:45:15.409Z",
+      "password": "12345"
     },
     {
       "username": "jacobshunter",
@@ -1076,7 +1173,8 @@
       "basicSalary": 14407136,
       "status": "CONTRACT",
       "group": "Sales",
-      "description": "2022-03-13T15:06:52.361Z"
+      "description": "2022-03-13T15:06:52.361Z",
+      "password": "12345"
     },
     {
       "username": "solomonmichele",
@@ -1087,7 +1185,8 @@
       "basicSalary": 10260674,
       "status": "PERMANENT",
       "group": "Sales",
-      "description": "2020-10-17T00:29:52.738Z"
+      "description": "2020-10-17T00:29:52.738Z",
+      "password": "12345"
     },
     {
       "username": "lewisamanda",
@@ -1098,7 +1197,8 @@
       "basicSalary": 8208130,
       "status": "CONTRACT",
       "group": "Sales",
-      "description": "2022-03-26T23:06:11.804Z"
+      "description": "2022-03-26T23:06:11.804Z",
+      "password": "12345"
     },
     {
       "username": "erikmcdowell",
@@ -1109,7 +1209,8 @@
       "basicSalary": 13520919,
       "status": "PERMANENT",
       "group": "Sales",
-      "description": "2021-06-19T01:16:25.377Z"
+      "description": "2021-06-19T01:16:25.377Z",
+      "password": "12345"
     },
     {
       "username": "aaron70",
@@ -1120,7 +1221,8 @@
       "basicSalary": 8461061,
       "status": "PERMANENT",
       "group": "IT",
-      "description": "2022-04-13T23:30:23.857Z"
+      "description": "2022-04-13T23:30:23.857Z",
+      "password": "12345"
     },
     {
       "username": "ahays",
@@ -1131,7 +1233,8 @@
       "basicSalary": 7225926,
       "status": "PERMANENT",
       "group": "Finance",
-      "description": "2021-03-18T12:08:35.149Z"
+      "description": "2021-03-18T12:08:35.149Z",
+      "password": "12345"
     },
     {
       "username": "zamoraronald",
@@ -1142,7 +1245,8 @@
       "basicSalary": 5420322,
       "status": "PERMANENT",
       "group": "Procurement",
-      "description": "2025-01-04T23:08:01.286Z"
+      "description": "2025-01-04T23:08:01.286Z",
+      "password": "12345"
     },
     {
       "username": "tonyodonnell",
@@ -1153,7 +1257,8 @@
       "basicSalary": 8260143,
       "status": "CONTRACT",
       "group": "Human Resources",
-      "description": "2025-01-10T04:09:29.221Z"
+      "description": "2025-01-10T04:09:29.221Z",
+      "password": "12345"
     },
     {
       "username": "fbennett",
@@ -1164,7 +1269,8 @@
       "basicSalary": 6705412,
       "status": "CONTRACT",
       "group": "Marketing",
-      "description": "2023-09-07T04:14:42.383Z"
+      "description": "2023-09-07T04:14:42.383Z",
+      "password": "12345"
     },
     {
       "username": "dmartin",
@@ -1175,7 +1281,8 @@
       "basicSalary": 9638294,
       "status": "PERMANENT",
       "group": "Engineering",
-      "description": "2025-08-14T18:01:35.480Z"
+      "description": "2025-08-14T18:01:35.480Z",
+      "password": "12345"
     },
     {
       "username": "melissatodd",
@@ -1186,7 +1293,8 @@
       "basicSalary": 5257927,
       "status": "PERMANENT",
       "group": "Finance",
-      "description": "2023-01-03T12:40:46.089Z"
+      "description": "2023-01-03T12:40:46.089Z",
+      "password": "12345"
     },
     {
       "username": "weavermelanie",
@@ -1197,7 +1305,8 @@
       "basicSalary": 13073878,
       "status": "PERMANENT",
       "group": "Procurement",
-      "description": "2023-01-11T21:45:59.184Z"
+      "description": "2023-01-11T21:45:59.184Z",
+      "password": "12345"
     },
     {
       "username": "george79",
@@ -1208,7 +1317,8 @@
       "basicSalary": 6014477,
       "status": "CONTRACT",
       "group": "Procurement",
-      "description": "2023-03-31T18:18:58.838Z"
+      "description": "2023-03-31T18:18:58.838Z",
+      "password": "12345"
     },
     {
       "username": "gwallace",
@@ -1219,7 +1329,8 @@
       "basicSalary": 14322379,
       "status": "PERMANENT",
       "group": "Human Resources",
-      "description": "2021-05-30T12:47:03.778Z"
+      "description": "2021-05-30T12:47:03.778Z",
+      "password": "12345"
     },
     {
       "username": "lindseysellers",
@@ -1230,7 +1341,8 @@
       "basicSalary": 6598168,
       "status": "CONTRACT",
       "group": "Customer Service",
-      "description": "2024-08-26T02:53:23.340Z"
+      "description": "2024-08-26T02:53:23.340Z",
+      "password": "12345"
     },
     {
       "username": "meghanjones",
@@ -1241,7 +1353,8 @@
       "basicSalary": 14067243,
       "status": "CONTRACT",
       "group": "Operations",
-      "description": "2024-02-13T20:09:04.262Z"
+      "description": "2024-02-13T20:09:04.262Z",
+      "password": "12345"
     },
     {
       "username": "shannonerickson",
@@ -1252,7 +1365,8 @@
       "basicSalary": 5292546,
       "status": "PERMANENT",
       "group": "Legal",
-      "description": "2020-11-04T17:57:22.777Z"
+      "description": "2020-11-04T17:57:22.777Z",
+      "password": "12345"
     },
     {
       "username": "sking",
@@ -1263,7 +1377,8 @@
       "basicSalary": 11032834,
       "status": "CONTRACT",
       "group": "Marketing",
-      "description": "2023-12-15T19:24:54.762Z"
+      "description": "2023-12-15T19:24:54.762Z",
+      "password": "12345"
     },
     {
       "username": "cevans",
@@ -1274,7 +1389,8 @@
       "basicSalary": 12634531,
       "status": "CONTRACT",
       "group": "IT",
-      "description": "2026-02-08T21:28:42.143Z"
+      "description": "2026-02-08T21:28:42.143Z",
+      "password": "12345"
     },
     {
       "username": "ataylor",
@@ -1285,7 +1401,8 @@
       "basicSalary": 7046706,
       "status": "PERMANENT",
       "group": "Sales",
-      "description": "2026-03-15T23:40:30.816Z"
+      "description": "2026-03-15T23:40:30.816Z",
+      "password": "12345"
     },
     {
       "username": "lshort",
@@ -1296,7 +1413,8 @@
       "basicSalary": 8233318,
       "status": "CONTRACT",
       "group": "Engineering",
-      "description": "2023-02-12T18:07:23.154Z"
+      "description": "2023-02-12T18:07:23.154Z",
+      "password": "12345"
     },
     {
       "username": "stonejasmin",
@@ -1307,7 +1425,8 @@
       "basicSalary": 14945991,
       "status": "PERMANENT",
       "group": "Procurement",
-      "description": "2023-12-07T20:16:48.072Z"
+      "description": "2023-12-07T20:16:48.072Z",
+      "password": "12345"
     },
     {
       "username": "williamskaren",
@@ -1318,7 +1437,8 @@
       "basicSalary": 8825226,
       "status": "PERMANENT",
       "group": "Operations",
-      "description": "2020-01-10T06:49:01.943Z"
+      "description": "2020-01-10T06:49:01.943Z",
+      "password": "12345"
     }
   ]
 }

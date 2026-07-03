@@ -7,31 +7,31 @@
             </div>
             <div class="items-center flex justify-center login-section w-full max-w-md mx-auto md:w-1/2 px-8 py-16">
                 <div class="flex flex-col gap-12 w-full">
-                    <h1 class="text-3xl text-center font-medium">Sign In</h1>
+                    <h1 class="text-3xl text-center font-medium">{{ label.LABELS.SIGN_IN }}</h1>
                     <form [formGroup]="loginForm">
                         <div class="flex flex-col gap-8 max-w-md">
                             <mat-form-field class="w-full text-sm primeng-input" appearance="outline"
                                 hideRequiredMarker="true">
-                                <mat-label>Username</mat-label>
-                                <input matInput placeholder="Username" class="text-sm" formControlName="username" />
+                                <mat-label>{{ label.FIELDS.USERNAME.LABEL }}</mat-label>
+                                <input matInput [placeholder]="label.FIELDS.USERNAME.PLACEHOLDER" class="text-sm" formControlName="username" />
                                 @if (loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty ||
                                 loginForm.get('username')?.touched)) {
-                                <mat-hint>Hint</mat-hint>
+                                <mat-hint class="text-red-600">{{ label.FIELDS.USERNAME.LABEL }} {{label.ERROR_MSG.IS_REQUIRED }}</mat-hint>
                                 }
                             </mat-form-field>
                             <mat-form-field class="w-full text-sm primeng-input" appearance="outline"
                                 hideRequiredMarker="true">
-                                <mat-label>Password</mat-label>
-                                <input matInput placeholder="Password" class="text-sm" formControlName="password" />
+                                <mat-label>{{ label.FIELDS.PASSWORD.LABEL }}</mat-label>
+                                <input matInput [placeholder]="label.FIELDS.PASSWORD.PLACEHOLDER" class="text-sm" formControlName="password" />
                                 @if (loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty ||
                                 loginForm.get('password')?.touched)) {
-                                <mat-hint>Hint</mat-hint>
+                                <mat-hint class="text-red-600">{{ label.FIELDS.PASSWORD.LABEL }} {{label.ERROR_MSG.IS_REQUIRED }}</mat-hint>
                                 }
                             </mat-form-field>
                             <div class="flex flex-col">
-                                <button matButton="filled" (click)="onLogin()">SIGN IN</button>
+                                <button matButton="filled" (click)="onSignIn()">{{ label.BUTTONS.SIGN_IN }}</button>
                                 <section class="remember-me-section">
-                                    <mat-checkbox>Remember me?</mat-checkbox>
+                                    <mat-checkbox>{{label.LABELS.REMEMBER_ME }}</mat-checkbox>
                                 </section>
                             </div>
 
