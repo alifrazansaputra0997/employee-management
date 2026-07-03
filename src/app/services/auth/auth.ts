@@ -9,11 +9,12 @@ export class Auth {
     localStorage.setItem('userAuth', JSON.stringify(data));
   }
 
-  getLogin(){
-    return localStorage.getItem('userAuth')
+  getLogin() {
+    const user = localStorage.getItem('userAuth');
+    return user ? JSON.parse(user) : null;
   }
 
-  removeUserLogin(){
+  removeUserLogin() {
     localStorage.clear();
   }
 }
