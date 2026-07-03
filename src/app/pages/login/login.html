@@ -22,7 +22,7 @@
                             <mat-form-field class="w-full text-sm primeng-input" appearance="outline"
                                 hideRequiredMarker="true">
                                 <mat-label>{{ label.FIELDS.PASSWORD.LABEL }}</mat-label>
-                                <input matInput [placeholder]="label.FIELDS.PASSWORD.PLACEHOLDER" class="text-sm" formControlName="password" />
+                                <input matInput [placeholder]="label.FIELDS.PASSWORD.PLACEHOLDER" type="password" class="text-sm" formControlName="password" />
                                 @if (loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty ||
                                 loginForm.get('password')?.touched)) {
                                 <mat-hint class="text-red-600">{{ label.FIELDS.PASSWORD.LABEL }} {{label.ERROR_MSG.IS_REQUIRED }}</mat-hint>
@@ -30,9 +30,9 @@
                             </mat-form-field>
                             <div class="flex flex-col">
                                 <button matButton="filled" (click)="onSignIn()">{{ label.BUTTONS.SIGN_IN }}</button>
-                                <section class="remember-me-section">
+                                <!-- <section class="remember-me-section">
                                     <mat-checkbox>{{label.LABELS.REMEMBER_ME }}</mat-checkbox>
-                                </section>
+                                </section> -->
                             </div>
 
                         </div>
