@@ -8,11 +8,11 @@
         <form [formGroup]="formSearch">
             <div class="flex flex-col gap-8 max-w-md">
                 <mat-form-field class="w-full text-sm primeng-input" appearance="outline" hideRequiredMarker="true">
-                    <mat-label>Name</mat-label>
+                    <mat-label class="font-inter">Name</mat-label>
                     <input matInput class="text-sm" formControlName="name" />
                 </mat-form-field>
                 <mat-form-field class="w-full text-sm primeng-input" appearance="outline" hideRequiredMarker="true">
-                    <mat-label>Group</mat-label>
+                    <mat-label class="font-inter">Group</mat-label>
                     <mat-select formControlName="group">
                         <mat-option>
                             <ngx-mat-select-search [placeholderLabel]="'Search'" [formControl]="searchEmployee">
@@ -25,5 +25,9 @@
                 </mat-form-field>
             </div>
         </form>
+        <mat-card-actions class="justify-center flex items-center gap-3 mt-2">
+            <button class="btn btn-find font-inter" matButton="filled">Find</button>
+            <button class="btn btn-create font-inter" matButton="filled">Add Employee</button>
+        </mat-card-actions>
     </mat-card-content>
 </mat-card>

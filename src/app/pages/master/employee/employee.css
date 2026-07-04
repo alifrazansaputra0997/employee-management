@@ -11,6 +11,20 @@
 }
 
 .card .mat-mdc-card-title {
-    font-size: 1.2rem;
-    font-weight: bold;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+::ng-deep .card .mat-mdc-form-field-subscript-wrapper {
+  display: none !important;
+}
+
+::ng-deep .card .btn{
+      border-radius: 4px !important;
+}
+
+::ng-deep .card .btn-find{
+  background-color: #FFB900 !important;
+}
+::ng-deep .card .btn-create{
+  background-color: #4cd137 !important;
 }
