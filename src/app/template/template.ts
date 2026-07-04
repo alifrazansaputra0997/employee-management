@@ -4,6 +4,7 @@ import { ToolbarTemplate } from '../components/template/toolbar-template/toolbar
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { SideMenu } from '@components/template/side-menu/side-menu';
 import { Breadcrumb } from '@components/breadcrumb/breadcrumb';
+import { MenuItem } from '@config/interfaces/menuItem.interface';
 
 @Component({
   selector: 'app-template',
@@ -19,7 +20,6 @@ import { Breadcrumb } from '@components/breadcrumb/breadcrumb';
   styleUrl: './template.css',
 })
 export class Template implements OnInit {
-
   constructor() { }
 
   ngOnInit(): void {

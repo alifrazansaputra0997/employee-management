@@ -1,0 +1,49 @@
+.menu-list .menu-panel {
+  box-shadow: none !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.menu-list .menu-panel .mat-expansion-panel-header-title {
+  font-family: 'Inter', sans-serif;
+}
+.header-sidemenu {
+  border-bottom: 1px solid #b2bec3;
+}
+
+.menu-list .menu-panel .mat-expansion-panel-header {
+  height: 44px;
+}
+
+::ng-deep
+  .menu-list
+  .menu-panel
+  .mat-expansion-panel-content-wrapper
+  .mat-expansion-panel-content
+  .mat-expansion-panel-body {
+  padding-right: 0 !important;
+  padding-bottom: 0 !important;
+}
+::ng-deep
+  .menu-list
+  .menu-panel
+  .mat-expansion-panel-content-wrapper
+  .mat-expansion-panel-content
+  .mat-expansion-panel-body
+  .mdc-list {
+  padding-top: 0 !important;
+}
+
+::ng-deep
+  .menu-list
+  .menu-panel
+    .mat-expansion-panel-content-wrapper
+  .mat-expansion-panel-content
+  .mat-expansion-panel-body
+  .mat-expansion-panel{
+        box-shadow: none !important;
+  }
+
+  /* .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:not([aria-disabled=true]):hover{
+    background:red !important;
+  } */

@@ -1,8 +1,45 @@
-<div class="flex w-full h-16 items-center px-5 py-4 gap-2 border-gray-200 border-b shadow">
+<div class="flex w-full h-16 items-center px-5 py-4 gap-2 header-sidemenu">
     <div class="app-icon w-9 h-9 flex items-center justify-center font-bold text-xl bg-amber-400 rounded-md">
         E
     </div>
     <div class="app-name text-xl">
-        mployee Management
+        Management
     </div>
+</div>
+<div class="p-3">
+    <mat-accordion class="menu-list" multi>
+        @for(menu of menus; track menu.id){
+        <mat-expansion-panel class="menu-panel">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{menu.title}}
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            @if(menu.children){
+            <mat-accordion multi>
+                @for(child of menu.children; track child.id){
+                @if(child.children){
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        {{ child.title }}
+                    </mat-expansion-panel-header>
+                    <mat-nav-list>
+                        @for(last of child.children; track last.id){
+                        <a mat-list-item [routerLink]="last.route">
+                            {{ last.title }}
+                        </a>
+                        }
+                    </mat-nav-list>
+                </mat-expansion-panel>
+                } @else {
+                <a mat-list-item [activated]="true" [routerLink]="child.route">
+                    {{child.title}}
+                </a>
+                }
+                }
+            </mat-accordion>
+            }
+        </mat-expansion-panel>
+        }
+    </mat-accordion>
 </div>

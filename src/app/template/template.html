@@ -1,10 +1,10 @@
-<mat-drawer-container class="w-full h-full" [hasBackdrop]="true">
-  <mat-drawer #drawer [mode]="'side'" class="remove-border">
+<mat-drawer-container class="w-full h-full" [hasBackdrop]="false">
+  <mat-drawer #drawer [mode]="'side'" [opened]="true" class="border-r remove-border side-menu-drawer">
     <app-side-menu />
   </mat-drawer>
   <mat-drawer-content>
     <app-toolbar-template (onOpenMenu)="drawer.toggle()" />
-    <div class="dashboard-content p-4">
+    <div class="dashboard-content p-3">
       <app-breadcrumb />
       <router-outlet />
     </div>

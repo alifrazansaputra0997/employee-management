@@ -1,3 +1,7 @@
 .remove-border{
     border-radius: 0 !important;
 }
+.side-menu-drawer{
+    width: 250px !important;
+    border-right: 1px solid #b2bec3;
+}
