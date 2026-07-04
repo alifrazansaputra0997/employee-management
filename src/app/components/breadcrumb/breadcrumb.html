@@ -1,0 +1,24 @@
+<nav class="flex p-3 bg-neutral-secondary-medium border border-default-medium rounded-base border-gray-300"
+  aria-label="Breadcrumb">
+  <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+    <li class="inline-flex items-center">
+      <a href="#" class="inline-flex items-center text-sm font-medium text-body hover:text-fg-brand">
+        <mat-icon>home</mat-icon>
+      </a>
+    </li>
+    @for(item of breadcrumbItems; track item.url; let last = $last){
+    @if(!last){
+    <li>
+      <a [routerLink]="item.url">
+        {{ item.label }}
+      </a>
+      <span>/</span>
+    </li>
+    } @else {
+    <li>
+      <span>{{item.label}}</span>
+    </li>
+    }
+    }
+  </ol>
+</nav>

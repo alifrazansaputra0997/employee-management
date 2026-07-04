@@ -8,6 +8,9 @@ export const pagesRoutes: Routes = [
     },
     {
         path: 'dashboard',
+        data: {
+            breadcrumb: 'Dashboard'
+        },
         loadComponent: () => import('./dashboard/dashboard').then(m => m.Dashboard)
     }
 ]

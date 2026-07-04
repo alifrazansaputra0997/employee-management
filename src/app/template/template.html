@@ -1,1 +1,12 @@
-<p>template works!</p>
+<mat-drawer-container class="w-full h-full" [hasBackdrop]="true">
+  <mat-drawer #drawer [mode]="'side'" class="remove-border">
+    <app-side-menu />
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-toolbar-template (onOpenMenu)="drawer.toggle()" />
+    <div class="dashboard-content p-4">
+      <app-breadcrumb />
+      <router-outlet />
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

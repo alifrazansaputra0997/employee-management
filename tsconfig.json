@@ -22,7 +22,7 @@
       "@config/*": ["src/app/config/*"],
       "@template/*": ["src/app/template/*"],
       "@guards/*": ["src/app/guards/*"],
-    }
+    },
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
