@@ -12,5 +12,12 @@ export const pagesRoutes: Routes = [
             breadcrumb: 'Dashboard'
         },
         loadComponent: () => import('./dashboard/dashboard').then(m => m.Dashboard)
+    },
+    {
+        path: 'master',
+        data: {
+            breadcrumb: 'Master'
+        },
+        loadChildren: () => import('./master/master.routes').then(m => m.masterRoutes)
     }
 ]

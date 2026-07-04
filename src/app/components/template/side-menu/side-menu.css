@@ -1,7 +1,13 @@
-.menu-list .menu-panel {
+.menu-list .menu-panel,
+.menu-list .menu-panel-2 {
   box-shadow: none !important;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
+  border-radius: 0 !important;
+}
+
+.menu-list .item-menu {
+  border-radius: 0 !important;
 }
 
 .menu-list .menu-panel .mat-expansion-panel-header-title {
@@ -13,6 +19,7 @@
 
 .menu-list .menu-panel .mat-expansion-panel-header {
   height: 44px;
+   font-family: 'Inter', sans-serif !important;
 }
 
 ::ng-deep
@@ -37,13 +44,16 @@
 ::ng-deep
   .menu-list
   .menu-panel
-    .mat-expansion-panel-content-wrapper
+  .mat-expansion-panel-content-wrapper
   .mat-expansion-panel-content
   .mat-expansion-panel-body
-  .mat-expansion-panel{
-        box-shadow: none !important;
-  }
-
-  /* .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:not([aria-disabled=true]):hover{
+  .mat-expansion-panel {
+  box-shadow: none !important;
+}
+::ng-deep .menu-list .mdc-list-item__primary-text,
+.menu-list .menu-panel-2  {
+  font-family: 'Inter', sans-serif !important;
+}
+/* .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:not([aria-disabled=true]):hover{
     background:red !important;
   } */
