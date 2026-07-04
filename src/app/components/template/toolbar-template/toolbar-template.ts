@@ -1,10 +1,10 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { Auth } from '@services/auth/auth';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-toolbar-template',
   imports: [
@@ -16,13 +16,18 @@ import { Router } from '@angular/router';
   templateUrl: './toolbar-template.html',
   styleUrl: './toolbar-template.css',
 })
-export class ToolbarTemplate {
+export class ToolbarTemplate implements OnInit {
   @Output() onOpenMenu = new EventEmitter()
 
   constructor(
     private authService: Auth,
-    private router: Router
+    private router: Router,
+    private activeRoute: ActivatedRoute
   ){ }
+
+  ngOnInit(): void {
+    
+  }
 
   onClickMenu() {
     this.onOpenMenu.emit(true);

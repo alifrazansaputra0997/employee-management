@@ -1,0 +1,16 @@
+.card {
+  border-radius: 5px;
+}
+
+.card .mat-mdc-card-content {
+  padding-top: 35px !important;
+}
+
+.card .font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+.card .mat-mdc-card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}

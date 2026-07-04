@@ -16,9 +16,7 @@ export class BreadcrumbService {
     if (!child) {
       return breadcrumbs;
     }
-    const routeURL = child.snapshot.url
-      .map(segment => segment.path)
-      .join('/');
+    const routeURL = child.snapshot.url.map(segment => segment.path).join('/');
     if (routeURL) {
       url += `/${routeURL}`;
     }

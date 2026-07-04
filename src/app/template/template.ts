@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ToolbarTemplate } from '../components/template/toolbar-template/toolbar-template';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -20,6 +20,7 @@ import { MenuItem } from '@config/interfaces/menuItem.interface';
   styleUrl: './template.css',
 })
 export class Template implements OnInit {
+  @ViewChild('drawer', { static: true }) drawer!: ElementRef;
   menus: MenuItem[] = [
     {
       id: 1,
@@ -36,36 +37,17 @@ export class Template implements OnInit {
         {
           id: 3,
           title: 'Employee',
-          route: '/employee',
-          children: [
-            {
-              id: 3,
-              title: 'Employee',
-              route: '/employee',
-              children: []
-            }
-          ]
+          route: '/master/employee',
+          children: []
         }
       ]
-    },
-    {
-      id: 4,
-      title: 'Settings',
-      route: '/settings',
-      children: [
-           {
-              id: 3,
-              title: 'Employee',
-              route: '/employee',
-              children: []
-            }
-      ]
     }
-  ]
+  ];
 
   constructor() { }
 
   ngOnInit(): void {
+    console.log('drawer', this.drawer)
 
   }
 

@@ -1,0 +1,14 @@
+{
+  "data": [
+    { "id": 0, "group": "Customer Service" },
+    { "id": 1, "group": "Human Resources" },
+    { "id": 2, "group": "IT" },
+    { "id": 3, "group": "Procurement" },
+    { "id": 5, "group": "Finance" },
+    { "id": 6, "group": "Engineering" },
+    { "id": 7, "group": "Operations" },
+    { "id": 10, "group": "Legal" },
+    { "id": 17, "group": "Sales" },
+    { "id": 41, "group": "Marketing" }
+  ]
+}
