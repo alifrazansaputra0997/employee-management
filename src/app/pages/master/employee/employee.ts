@@ -1,70 +1,56 @@
 import { Component, OnInit } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
-import { FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
-import { MatInputModule } from '@angular/material/input';
 import { Users } from '@services/users/users';
-import { MatSelectModule } from '@angular/material/select';
 import { group } from '@config/interfaces/group.interface';
-import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
+import { employee } from '@config/interfaces/employee.interface';
+import { MatCardModule } from '@angular/material/card';
+import { Router } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
+
 @Component({
   selector: 'app-employee',
   imports: [
-    MatCardModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
     MatButtonModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-    NgxMatSelectSearchModule
+    MatCardModule,
+    RouterOutlet,
   ],
   templateUrl: './employee.html',
   styleUrl: './employee.css',
 })
 export class Employee implements OnInit {
-  formSearch!: FormGroup;
+  constructor() { }
 
-  DDLGroup: group[] = [];
-  filteredGroup: group[] = [];
-  searchEmployee = new FormControl('');
+  ngOnInit(): void { }
 
-  constructor(
-    private userService: Users
-  ) { }
+ 
 
-  ngOnInit(): void {
-    this.initForm();
-    this.initDDLGroup();
 
-    this.searchEmployee.valueChanges.subscribe(value => {
-      this.filterGroup(value);
-    });
-  }
+ 
 
-  initForm() {
-    this.formSearch = new FormGroup({
-      name: new FormControl('', [Validators.required]),
-      group: new FormControl(''),
-    });
-  }
+ 
 
-  initDDLGroup() {
-    this.userService.getGroup().subscribe(res => {
-      if (res.data) {
-        this.DDLGroup = res.data;
-        this.filteredGroup = [...this.DDLGroup];
-      }
-    })
-  }
+  // handlePageEvent(event: any) {
+  //   this.configPagination = {
+  //     dataLength: event.length,
+  //     pageIndex: event.pageIndex,
+  //     pageSize: event.pageSize,
+  //   };
+  //   this.setUpPagination();
+  // }
 
-  filterGroup(value: string | null) {
-    const keyword = (value ?? '').toLowerCase().trim();
-    this.filteredGroup = this.DDLGroup.filter(group =>
-      group.group.toLowerCase().includes(keyword)
-    );
-  }
+  // setUpPagination() {
+  //   if (this.dataTable.length != 0) {
+  //     const startIndex = this.configPagination.pageIndex * this.configPagination.pageSize;
+  //     const endIndex = startIndex + this.configPagination.pageSize;
+  //     this.configPagination.dataLength = this.dataTable.length;
+  //     const hasil = this.dataTable.slice(startIndex, endIndex);
+  //     this.onDataReady.emit(hasil)
+  //   } else {
+  //     this.onDataReady.emit([])
+  //   }
+
+  //   this.loadingService.setLoading(false);
+  // }
 
 
 }

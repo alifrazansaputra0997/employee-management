@@ -1,33 +1,3 @@
 <h2 class="text-2xl font-bold text-gray-900">Employee</h2>
 <h3 class="text-md text-gray-700">Manage your employee and their account information</h3>
-<mat-card class="card mt-4 bg-white" appearance="outlined">
-    <mat-card-header>
-        <mat-card-title class="font-inter text-md">Find Employee</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-        <form [formGroup]="formSearch">
-            <div class="flex flex-col gap-8 max-w-md">
-                <mat-form-field class="w-full text-sm primeng-input" appearance="outline" hideRequiredMarker="true">
-                    <mat-label class="font-inter">Name</mat-label>
-                    <input matInput class="text-sm" formControlName="name" />
-                </mat-form-field>
-                <mat-form-field class="w-full text-sm primeng-input" appearance="outline" hideRequiredMarker="true">
-                    <mat-label class="font-inter">Group</mat-label>
-                    <mat-select formControlName="group">
-                        <mat-option>
-                            <ngx-mat-select-search [placeholderLabel]="'Search'" [formControl]="searchEmployee">
-                            </ngx-mat-select-search>
-                        </mat-option>
-                        @for (ddl of filteredGroup; track ddl.id) {
-                        <mat-option [value]="ddl.group">{{ddl.group}}</mat-option>
-                        }
-                    </mat-select>
-                </mat-form-field>
-            </div>
-        </form>
-        <mat-card-actions class="justify-center flex items-center gap-3 mt-2">
-            <button class="btn btn-find font-inter" matButton="filled">Find</button>
-            <button class="btn btn-create font-inter" matButton="filled">Add Employee</button>
-        </mat-card-actions>
-    </mat-card-content>
-</mat-card>
+<router-outlet />

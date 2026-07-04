@@ -11,6 +11,16 @@ export const masterRoutes: Routes = [
         data: {
              breadcrumb: 'Employee'
         },
-        loadComponent: () => import('./employee/employee').then(m => m.Employee)
+        loadComponent: () => import('./employee/employee').then(m => m.Employee),
+        children: [
+            {
+                path: 'add-employee',
+                loadComponent: () => import('./employee/add-employee/add-employee').then(m => m.AddEmployee)
+            },
+            {
+                path: 'employee-list',
+                loadComponent: () => import('./employee/employee-list/employee-list').then(m => m.EmployeeList)
+            }
+        ]
     }
 ]

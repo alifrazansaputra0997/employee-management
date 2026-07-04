@@ -12,7 +12,7 @@ export class Users {
   constructor() { }
 
   getUsers() {
-    return this.http.get('/mocks/employee.json')
+    return this.http.get<{data: employee[]}>('/mocks/employee.json')
   }
 
   getGroup(){

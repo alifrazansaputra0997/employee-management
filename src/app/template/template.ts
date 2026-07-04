@@ -38,7 +38,20 @@ export class Template implements OnInit {
           id: 3,
           title: 'Employee',
           route: '/master/employee',
-          children: []
+          children: [
+            {
+              id: 5,
+              title: 'List Employee',
+              route: '/master/employee/employee-list',
+              children: []
+            },
+            {
+              id: 4,
+              title: 'Add Employee',
+              route: '/master/employee/add-employee',
+              children: []
+            },
+          ]
         }
       ]
     }
