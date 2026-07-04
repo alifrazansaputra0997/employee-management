@@ -20,6 +20,49 @@ import { MenuItem } from '@config/interfaces/menuItem.interface';
   styleUrl: './template.css',
 })
 export class Template implements OnInit {
+  menus: MenuItem[] = [
+    {
+      id: 1,
+      title: 'Dashboard',
+      icon: 'folder',
+      route: '/dashboard',
+      children: []
+    },
+    {
+      id: 2,
+      title: 'Master',
+      icon: 'folder',
+      children: [
+        {
+          id: 3,
+          title: 'Employee',
+          route: '/employee',
+          children: [
+            {
+              id: 3,
+              title: 'Employee',
+              route: '/employee',
+              children: []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: 4,
+      title: 'Settings',
+      route: '/settings',
+      children: [
+           {
+              id: 3,
+              title: 'Employee',
+              route: '/employee',
+              children: []
+            }
+      ]
+    }
+  ]
+
   constructor() { }
 
   ngOnInit(): void {

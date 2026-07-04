@@ -19,7 +19,9 @@
 
 .menu-list .menu-panel .mat-expansion-panel-header {
   height: 44px;
-   font-family: 'Inter', sans-serif !important;
+  font-family: 'Inter', sans-serif !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
 }
 
 ::ng-deep
@@ -51,9 +53,17 @@
   box-shadow: none !important;
 }
 ::ng-deep .menu-list .mdc-list-item__primary-text,
-.menu-list .menu-panel-2  {
+::ng-deep .mdc-list-item__primary-text,
+.menu-list .menu-panel-2 {
   font-family: 'Inter', sans-serif !important;
 }
-/* .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:not([aria-disabled=true]):hover{
-    background:red !important;
-  } */
+
+.item-list {
+  padding: 0 !important;
+  height: 44px !important;
+  border-radius: 0 !important;
+}
+
+.item-list .item-menu{
+border-radius: 0 !important;
+}
