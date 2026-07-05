@@ -1,59 +1,140 @@
-# EmployeeManagement
+# Employee Management
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.12.
+## 📖 Description
 
-## Development server
+Employee Management adalah proyek **Technical Assessment Backoffice - Frontend** yang dibangun menggunakan **Angular Framework**. Aplikasi ini mensimulasikan sistem manajemen data karyawan dengan fitur autentikasi, dashboard, daftar karyawan, serta pengelolaan data karyawan.
 
-To start a local development server, run:
+---
+
+# 🛠️ Technology Stack
+
+| Technology | Version |
+|------------|----------|
+| Angular | 21.2.17 |
+| Angular CLI | 21.2.18 |
+| Node.js | 24.16.0 |
+| Angular Material | 21.2.14 |
+| Tailwind CSS | 4.1.12 |
+| ngx-mat-select-search | 8.0.6 |
+
+---
+
+# 📄 Application Pages
+
+Aplikasi terdiri dari beberapa halaman berikut:
+
+- Dashboard
+- Login
+- Employee List
+- Employee Form
+- Employee Modal
+
+---
+
+# ⚙️ Installation Requirements
+
+Pastikan perangkat Anda telah memiliki versi berikut:
+
+| Software | Version |
+|----------|----------|
+| Node.js | 24.16.0 |
+| Angular CLI | 21.2.18 |
+| Angular | 21.2.17 |
+
+---
+
+# 🚀 Getting Started
+
+### 1. Clone Repository
 
 ```bash
-ng serve
+git clone git@github.com:alifrazansaputra0997/employee-management.git
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### 2. Masuk ke Folder Project
 
 ```bash
-ng generate component component-name
+cd employee-management
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### 3. Install Dependencies
 
 ```bash
-ng generate --help
+npm install
 ```
 
-## Building
-
-To build the project run:
+### 4. Jalankan Aplikasi
 
 ```bash
-ng build
+npm start
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Secara default aplikasi akan berjalan di:
 
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
+```
+http://localhost:4200
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+# 💾 Temporary Storage
 
-```bash
-ng e2e
+Untuk penyimpanan state sementara, aplikasi ini menggunakan:
+
+- Angular Signal
+
+---
+
+# 🌐 Dummy API
+
+Sumber data dummy berasal dari:
+
+https://api-ninjas.com/
+
+Contoh endpoint yang digunakan:
+
+```http
+GET https://api.api-ninjas.com/v2/randomuser?count=30&gender=any&min_age=18&max_age=40&locale=en_US&fields=username,first_name,last_name,email,dob
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+# 📂 Project Structure
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```
+src/
+├── app/
+│   ├── components/
+│   ├── config/
+│   ├── guards/
+│   ├── pages/
+│   ├── services/
+│   └── template/
+├── assets/
+```
+
+---
+
+# ✨ Features
+
+- User Login
+- Dashboard
+- Employee List
+- Create Employee
+- Update Employee
+- Delete Employee
+- Employee Detail Modal
+- Search Employee
+- Responsive UI
+- Material Design Components
+- Tailwind CSS Styling
+- State Management using Angular Signal
+
+---
+
+# 👨‍💻 Author
+
+**Alif Razan Saputra**
+
+GitHub:
+https://github.com/alifrazansaputra0997
