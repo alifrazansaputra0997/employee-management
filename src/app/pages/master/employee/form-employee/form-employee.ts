@@ -15,6 +15,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { LoadingService } from '@services/common/loading-service/loading-service';
 import { status } from '@config/interfaces/status.interface';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-form-employee',
   imports: [
@@ -48,6 +49,7 @@ export class FormEmployee implements OnInit {
   constructor(
     private loadingService: LoadingService,
     private userService: Users,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -80,12 +82,12 @@ export class FormEmployee implements OnInit {
       this.formEmployee.markAllAsTouched();
       this.formEmployee.markAllAsDirty();
     } else {
-      
+
     }
   }
 
   onCancel() {
-
+    this.router.navigate(['master', 'employee', 'employee-list'])
   }
 
   filterGroup(value: string | null) {
@@ -108,7 +110,7 @@ export class FormEmployee implements OnInit {
 
   initDDLStatus() {
     this.loadingService.setLoading(true);
-     this.userService.getStatus().subscribe(res => {
+    this.userService.getStatus().subscribe(res => {
       if (res.data) {
         this.DDLStatus = res.data;
         this.loadingService.setLoading(false);

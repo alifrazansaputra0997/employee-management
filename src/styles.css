@@ -39,7 +39,7 @@ body {
 }
 
 .square-dialog .mat-mdc-dialog-surface {
-  border-radius: 0px !important;
+  border-radius: 6px !important;
 }
 
 .success-snackbar .mat-mdc-snackbar-surface {
@@ -55,3 +55,4 @@ body {
   background-color: #eb2f06 !important;
   color: #ffffff !important;
 }
+

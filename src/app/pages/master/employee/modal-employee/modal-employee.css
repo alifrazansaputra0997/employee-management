@@ -1,0 +1,3 @@
+::ng-deep .modal-employee .mat-mdc-tab-group{
+    width: 100% !important;
+}

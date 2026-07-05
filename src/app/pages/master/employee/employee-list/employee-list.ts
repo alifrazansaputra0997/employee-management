@@ -16,6 +16,9 @@ import { ConfirmationService } from '@services/common/confirmation-service/confi
 import { Label } from '@config/Labels';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { SnakebarNotification } from '@components/snakebar-notification/snakebar-notification';
+import { MatIcon } from '@angular/material/icon';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalEmployee } from '../modal-employee/modal-employee';
 
 @Component({
   selector: 'app-employee-list',
@@ -28,7 +31,8 @@ import { SnakebarNotification } from '@components/snakebar-notification/snakebar
     DatePipe,
     CurrencyPipe,
     MatPaginatorModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatIcon
   ],
   templateUrl: './employee-list.html',
   styleUrl: './employee-list.css',
@@ -59,7 +63,8 @@ export class EmployeeList implements OnInit {
     private userService: Users,
     private loadingService: LoadingService,
     private confirmationService: ConfirmationService,
-    private snakeBarService: MatSnackBar
+    private snakeBarService: MatSnackBar,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -175,6 +180,19 @@ export class EmployeeList implements OnInit {
           return item[property as keyof employee];
       }
     }
+  }
+
+  onView(row: employee) {
+    this.dialog.open(ModalEmployee, {
+      data: {
+        ...row
+      },
+      panelClass: 'square-dialog',
+      width: '80vw',
+      maxWidth: '800px',
+      minWidth: '350px',
+      minHeight: '400px'
+    })
   }
 
 }

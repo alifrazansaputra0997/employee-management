@@ -22,35 +22,4 @@ export class Employee implements OnInit {
 
   ngOnInit(): void { }
 
- 
-
-
- 
-
- 
-
-  // handlePageEvent(event: any) {
-  //   this.configPagination = {
-  //     dataLength: event.length,
-  //     pageIndex: event.pageIndex,
-  //     pageSize: event.pageSize,
-  //   };
-  //   this.setUpPagination();
-  // }
-
-  // setUpPagination() {
-  //   if (this.dataTable.length != 0) {
-  //     const startIndex = this.configPagination.pageIndex * this.configPagination.pageSize;
-  //     const endIndex = startIndex + this.configPagination.pageSize;
-  //     this.configPagination.dataLength = this.dataTable.length;
-  //     const hasil = this.dataTable.slice(startIndex, endIndex);
-  //     this.onDataReady.emit(hasil)
-  //   } else {
-  //     this.onDataReady.emit([])
-  //   }
-
-  //   this.loadingService.setLoading(false);
-  // }
-
-
 }

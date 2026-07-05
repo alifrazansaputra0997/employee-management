@@ -1,46 +1,57 @@
 <app-form-searching-employee (onFindAct)="onFind($event)" (onAddEmployeeAct)="onAddEmployee($event)"
     (onResetFormAct)="onResetForm($event)" [DDLGroup]="DDLGroup" [filteredGroup]="filteredGroup" />
 <mat-card class="card mt-4 bg-white" appearance="outlined">
-    <mat-card-content>
-        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
-            <ng-container matColumnDef="action">
-                <th mat-header-cell *matHeaderCellDef>ACTION</th>
-                <td mat-cell *matCellDef="let element">
-                    <div class="action">
-                        <button mat-flat-button class="btn btn-edit" (click)="onEdit(element)">Edit</button>
-                        <button mat-flat-button class="btn btn-delete" (click)="onDelete(element)">Delete</button>
-                    </div>
-                </td>
-            </ng-container>
-            <ng-container matColumnDef="name">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header="name" class="text-center"> NAME</th>
-                <td mat-cell *matCellDef="let element"> {{element.firstName}} {{element.lastName}} </td>
-            </ng-container>
-            <ng-container matColumnDef="group">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header="group" class="text-center"> GROUP </th>
-                <td mat-cell *matCellDef="let element"> {{element.group}} </td>
-            </ng-container>
-            <ng-container matColumnDef="email">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header="email" class="text-center"> EMAIL </th>
-                <td mat-cell *matCellDef="let element"> {{element.email}} </td>
-            </ng-container>
-            <ng-container matColumnDef="birthDate">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header="birthDate" class="text-center"> BIRTH DATE </th>
-                <td mat-cell *matCellDef="let element"> {{element.birthDate | date:'longDate'}} </td>
-            </ng-container>
-            <ng-container matColumnDef="basicSalary">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header="basicSalary" class="text-center"> BASIC SALARY </th>
-                <td mat-cell *matCellDef="let element"> {{element.basicSalary | currency:'IDR':'Rp. ':'1.0-0'}}
-            </ng-container>
-            <ng-container matColumnDef="status">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header="status" class="text-center"> STATUS </th>
-                <td mat-cell *matCellDef="let element"> {{element.status}} </td>
-            </ng-container>
+    <div class="overflow-auto max-h-[500px]">
+        <mat-card-content>
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+                <ng-container matColumnDef="action">
+                    <th mat-header-cell *matHeaderCellDef>ACTION</th>
+                    <td mat-cell *matCellDef="let element">
+                        <div class="action">
+                            <button matMiniFab class="btn btn-view" (click)="onView(element)">
+                                <mat-icon>visibility</mat-icon>
+                            </button>
+                            <button matMiniFab class="btn btn-edit" (click)="onEdit(element)">
+                                <mat-icon>edit</mat-icon>
+                            </button>
+                            <button matMiniFab class="btn btn-delete" (click)="onDelete(element)">
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                        </div>
+                    </td>
+                </ng-container>
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header="name" class="text-center"> NAME</th>
+                    <td mat-cell *matCellDef="let element"> {{element.firstName}} {{element.lastName}} </td>
+                </ng-container>
+                <ng-container matColumnDef="group">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header="group" class="text-center"> GROUP </th>
+                    <td mat-cell *matCellDef="let element"> {{element.group}} </td>
+                </ng-container>
+                <ng-container matColumnDef="email">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header="email" class="text-center"> EMAIL </th>
+                    <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+                </ng-container>
+                <ng-container matColumnDef="birthDate">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header="birthDate" class="text-center"> BIRTH DATE
+                    </th>
+                    <td mat-cell *matCellDef="let element"> {{element.birthDate | date:'longDate'}} </td>
+                </ng-container>
+                <ng-container matColumnDef="basicSalary">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header="basicSalary" class="text-center"> BASIC
+                        SALARY </th>
+                    <td mat-cell *matCellDef="let element"> {{element.basicSalary | currency:'IDR':'Rp. ':'1.0-0'}}
+                </ng-container>
+                <ng-container matColumnDef="status">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header="status" class="text-center"> STATUS </th>
+                    <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+                </ng-container>
 
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
-        <mat-paginator [pageSize]="10" [pageSizeOptions]="[5,10,25,100]" showFirstLastButtons>
-        </mat-paginator>
-    </mat-card-content>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+            <mat-paginator [pageSize]="10" [pageSizeOptions]="[5,10,25,100]" showFirstLastButtons>
+            </mat-paginator>
+        </mat-card-content>
+    </div>
 </mat-card>

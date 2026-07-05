@@ -1,5 +1,6 @@
 ::ng-deep .card .btn {
   border-radius: 4px !important;
+  color: white;
 }
 ::ng-deep .card .btn-edit {
   background-color: #ffb900 !important;
@@ -21,3 +22,15 @@
 ::ng-deep .card .mat-elevation-z8 .mat-mdc-header-cell {
   text-align: center;
 }
+::ng-deep .card .btn-view {
+  background-color: #222f3e !important;
+}
+
+
+
+/* .reponsive-table {
+  height: 400px;
+  width: 550px;
+  max-width: 100%;
+  overflow: auto;
+} */

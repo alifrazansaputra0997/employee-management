@@ -1,0 +1,90 @@
+<h3 mat-dialog-title>Detail Employee</h3>
+<mat-dialog-content class="modal-employee">
+    <div class="flex flex-row items-center gap-2">
+        <div class="circle-letter size-16 rounded-full flex items-center justify-center">
+            <div
+                class="cirle w-full h-full flex items-center justify-center bg-amber-300  rounded-full text-2xl font-bold">
+                AS</div>
+        </div>
+        <div class="information">
+            <p class="name font-bold text-lg">Alif Razan Saputra</p>
+            <p class="email text-sm">alifrazanit@gmail.com</p>
+        </div>
+    </div>
+    <div class="flex mt-6">
+        <mat-tab-group>
+            <mat-tab label="Overview">
+                <div class="overview mt-2 text-justify">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the
+                    librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to
+                    make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the
+                    leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to
+                    these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft
+                    Word including versions of Lorem Ipsum.
+                </div>
+            </mat-tab>
+            <mat-tab label="Contact">
+                <div class="contact mt-2 grid grid-cols-1 gap-7 md:grid-cols-3 md:gap-7">
+                    <div class="field-email flex items-center gap-2">
+                        <div class="icon">
+                            <mat-icon>mail</mat-icon>
+                        </div>
+                        <div class="detail">
+                            <p class="label text-base">Email</p>
+                            <p class="email text-sm">stevencarpenter@example.net</p>
+                        </div>
+                    </div>
+                    <div class="field-username flex items-center gap-2">
+                        <div class="icon">
+                            <mat-icon>alternate_email</mat-icon>
+                        </div>
+                        <div class="detail">
+                            <p class="label text-base">Username</p>
+                            <p class="email text-sm">obrown</p>
+                        </div>
+                    </div>
+                    <div class="field-birthdate flex items-center gap-2">
+                        <div class="icon">
+                            <mat-icon>calendar_today</mat-icon>
+                        </div>
+                        <div class="detail">
+                            <p class="label text-base">Birth Date</p>
+                            <p class="email text-sm">2004-03-07</p>
+                        </div>
+                    </div>
+                    <div class="field-birthdate flex items-center gap-2">
+                        <div class="icon">
+                            <mat-icon>paid</mat-icon>
+                        </div>
+                        <div class="detail">
+                            <p class="label text-base">Basic Salary</p>
+                            <p class="email text-sm">Rp. 10.000.000</p>
+                        </div>
+                    </div>
+                    <div class="field-status flex items-center gap-2">
+                        <div class="icon">
+                            <mat-icon>work</mat-icon>
+                        </div>
+                        <div class="detail">
+                            <p class="label text-base">Status</p>
+                            <p class="email text-sm">Permanent</p>
+                        </div>
+                    </div>
+                    <div class="field-group flex items-center gap-2">
+                        <div class="icon">
+                            <mat-icon>group</mat-icon>
+                        </div>
+                        <div class="detail">
+                            <p class="label text-base">Group</p>
+                            <p class="email text-sm">Customer Service</p>
+                        </div>
+                    </div>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button matButton mat-dialog-close>{{label.BUTTONS.OK}}</button>
+</mat-dialog-actions>
