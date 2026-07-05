@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, inject } from '@angular/core';
+import { Injectable, inject, signal } from '@angular/core';
 import { employee } from '@config/interfaces/employee.interface';
 import { group } from '@config/interfaces/group.interface';
 import { status } from '@config/interfaces/status.interface';
@@ -9,6 +9,8 @@ import { status } from '@config/interfaces/status.interface';
 })
 export class Users {
   private http = inject(HttpClient);
+  private readonly _listEmployee = signal<employee[]>([]);
+
 
   constructor() { }
 
@@ -28,7 +30,22 @@ export class Users {
     return this.http.get<{data: employee[]}>('/mocks/employee.json')
   }
 
-  
+
+  get listEmployee(){
+    return this._listEmployee();
+  }
+
+  setListEmployee(data: employee[]){
+    this._listEmployee.set(data);
+  }
+
+  deleteEmployee(employeeId: number){
+    this._listEmployee.update(employee => employee.filter(e => e.id !== employeeId));
+  }
+
+  addEmployee(newEmployee: employee){
+    this._listEmployee.update(employee => [...employee, newEmployee])
+  }
 
   
 }

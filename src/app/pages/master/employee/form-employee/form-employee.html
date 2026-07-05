@@ -86,9 +86,29 @@
                 </mat-form-field>
                 <mat-form-field class="w-full text-sm primeng-input" appearance="outline">
                     <mat-label class="font-inter">{{ label.FIELDS.DESCRIPTION.LABEL }}</mat-label>
-                    <input matInput class="text-sm" formControlName="description" />
+                     <input matInput formControlName="description" [max]="maxDate" [matDatepicker]="picker2"
+                        [placeholder]="label.FIELDS.BIRTHDATE.PLACEHOLDER" />
+                    <mat-datepicker-toggle matIconSuffix [for]="picker2" disabled></mat-datepicker-toggle>
+                    <mat-datepicker #picker2></mat-datepicker>
+
                     @if(formEmployee.get('description')?.hasError('required') && submitted){
                     <mat-error class="text-red-600">{{ label.FIELDS.DESCRIPTION.LABEL }}
+                        {{label.ERROR_MSG.IS_REQUIRED}}</mat-error>
+                    }
+                </mat-form-field>
+                <mat-form-field class="w-full text-sm primeng-input" appearance="outline">
+                    <mat-label class="font-inter">{{ label.FIELDS.USERNAME.LABEL }}</mat-label>
+                    <input matInput class="text-sm" formControlName="username" />
+                    @if(formEmployee.get('username')?.hasError('required') && submitted){
+                    <mat-error class="text-red-600">{{ label.FIELDS.USERNAME.LABEL }}
+                        {{label.ERROR_MSG.IS_REQUIRED}}</mat-error>
+                    }
+                </mat-form-field>
+                <mat-form-field class="w-full text-sm primeng-input" appearance="outline">
+                    <mat-label class="font-inter">{{ label.FIELDS.PASSWORD.LABEL }}</mat-label>
+                    <input matInput type="password" class="text-sm" formControlName="password" />
+                    @if(formEmployee.get('password')?.hasError('required') && submitted){
+                    <mat-error class="text-red-600">{{ label.FIELDS.PASSWORD.LABEL }}
                         {{label.ERROR_MSG.IS_REQUIRED}}</mat-error>
                     }
                 </mat-form-field>

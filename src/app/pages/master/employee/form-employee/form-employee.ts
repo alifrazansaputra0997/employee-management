@@ -16,6 +16,9 @@ import { provideNativeDateAdapter } from '@angular/material/core';
 import { LoadingService } from '@services/common/loading-service/loading-service';
 import { status } from '@config/interfaces/status.interface';
 import { Router } from '@angular/router';
+import { employee } from '@config/interfaces/employee.interface';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Notification } from '@services/common/notification/notification';
 @Component({
   selector: 'app-form-employee',
   imports: [
@@ -49,7 +52,8 @@ export class FormEmployee implements OnInit {
   constructor(
     private loadingService: LoadingService,
     private userService: Users,
-    private router: Router
+    private router: Router,
+    private notification: Notification
   ) { }
 
   ngOnInit(): void {
@@ -72,7 +76,11 @@ export class FormEmployee implements OnInit {
       basicSalary: new FormControl('', [Validators.required]),
       status: new FormControl('', [Validators.required]),
       group: new FormControl('', [Validators.required]),
-      description: new FormControl('', [Validators.required])
+      description: new FormControl({
+        value: new Date(),
+        disabled: true
+      }, [Validators.required]),
+      password: new FormControl('', [Validators.required]),
     });
   }
 
@@ -82,7 +90,26 @@ export class FormEmployee implements OnInit {
       this.formEmployee.markAllAsTouched();
       this.formEmployee.markAllAsDirty();
     } else {
+      const formData = this.formEmployee.value;
 
+      const payload: employee = {
+        id: Math.random(),
+        username: formData.username,
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        password: formData.password,
+        basicSalary: formData.basicSalary,
+        birthDate: formData.birthDate,
+        description: formData.description,
+        group: formData.group,
+        status: formData.status
+      };
+
+      this.userService.addEmployee(payload);
+      this.notification.successCreate(payload);
+
+      this.router.navigate(['master', 'employee', 'employee-list'])
     }
   }
 

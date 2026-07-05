@@ -54,6 +54,7 @@ export const Label = {
         CONFIRMATION: 'Confirmation',
         CONFIRMATION_DELETE: 'Are you sure want to delete this data?',
         SUCCESFULLY_DELETE: 'is Successfully Deleted',
+        SUCCESFULLY_CREATED: 'is Successfully Created',
         NOENTRIESFOUND: "No matching data found",
     },
     BUTTONS: {

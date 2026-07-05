@@ -15,10 +15,10 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { ConfirmationService } from '@services/common/confirmation-service/confirmation-service';
 import { Label } from '@config/Labels';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-import { SnakebarNotification } from '@components/snakebar-notification/snakebar-notification';
 import { MatIcon } from '@angular/material/icon';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalEmployee } from '../modal-employee/modal-employee';
+import { Notification } from '@services/common/notification/notification';
 
 @Component({
   selector: 'app-employee-list',
@@ -32,7 +32,10 @@ import { ModalEmployee } from '../modal-employee/modal-employee';
     CurrencyPipe,
     MatPaginatorModule,
     MatSnackBarModule,
-    MatIcon
+    MatIcon,
+  ],
+  providers: [
+    Notification
   ],
   templateUrl: './employee-list.html',
   styleUrl: './employee-list.css',
@@ -63,13 +66,22 @@ export class EmployeeList implements OnInit {
     private userService: Users,
     private loadingService: LoadingService,
     private confirmationService: ConfirmationService,
-    private snakeBarService: MatSnackBar,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private notification: Notification
   ) { }
 
   ngOnInit(): void {
     this.initDDLGroup();
+
+    /**
+     * Karena menggunakan JSON biasa dan tidak mungkin untuk melakukan
+     * perubahan terhadap file fisik dari JSON, jadi menggunakan alternative
+     * lain yaitu signal.
+     * JSON akan mengirim file ke signal dan disimpan temporary sehingga dapat
+     * melakukan flow CRUD di local data
+     */
     this.getEmployee();
+
   }
 
   initDDLGroup() {
@@ -91,7 +103,9 @@ export class EmployeeList implements OnInit {
     };
     const payloadName = String(payload.name).toLowerCase().trim();
     const payloadGroup = payload.group;
-    const found = this.dataTemporaryTable.filter((data: any) => {
+
+    const dataEmployee = this.userService.listEmployee;
+    const found = dataEmployee.filter((data: any) => {
       const fullName = String(`${data.firstName} ${data.lastName}`).toLowerCase();
 
       const matchName = fullName.includes(payloadName);
@@ -105,8 +119,11 @@ export class EmployeeList implements OnInit {
 
   onResetForm(e: any) {
     this.loadingService.setLoading(true);
-    this.dataTable = [...this.dataTemporaryTable];
-    this.dataTemporaryTable = [...this.dataTemporaryTable];
+    const employee = this.userService.listEmployee; // mendapatkan nilai dari signal
+
+    this.dataTable = [...employee];
+    this.dataTemporaryTable = [...employee];
+
     this.dataSource.data = this.dataTable;
     this.loadingService.setLoading(false);
   }
@@ -115,13 +132,23 @@ export class EmployeeList implements OnInit {
     this.router.navigate(['master', 'employee', 'add-employee'])
   }
 
+
   getEmployee() {
     this.loadingService.setLoading(true);
     this.userService.getUsers().subscribe(res => {
       if (res.data) {
         this.loadingService.setLoading(false);
-        this.dataTable = [...res.data];
-        this.dataTemporaryTable = [...res.data];
+        let listEmployee: employee[] = [];
+        const dataEmployee = this.userService.listEmployee;
+        if (dataEmployee.length == 0) {   // set signal, hanya sekali ketika init
+          listEmployee = res.data;
+          this.userService.setListEmployee(listEmployee);
+        } else {
+          listEmployee = dataEmployee;
+        }
+
+        this.dataTable = [...listEmployee];
+        this.dataTemporaryTable = [...listEmployee];
 
         this.dataSource.data = this.dataTable;
       }
@@ -140,17 +167,13 @@ export class EmployeeList implements OnInit {
     const confirmation = this.confirmationService.confirmation(this.label.LABELS.CONFIRMATION_DELETE);
     confirmation.afterClosed().subscribe(res => {
       if (res && res.response == 'yes') {
-        this.dataTable = this.dataTable.filter(data => data.id !== row.id);
+
+        this.userService.deleteEmployee(row.id); // delete 1 user dari signal
+        this.dataTable = this.userService.listEmployee;
+
         this.dataSource.data = this.dataTable;
-        this.snakeBarService.openFromComponent(SnakebarNotification, {
-          duration: 5 * 1000,
-          horizontalPosition: 'right',
-          verticalPosition: 'top',
-          panelClass: ['delete-snackbar'],
-          data: {
-            message: `${row.id} - ${row.firstName} ${row.lastName} ${this.label.LABELS.SUCCESFULLY_DELETE}`
-          }
-        });
+
+        this.notification.successDelete(row);
       }
     })
   }
