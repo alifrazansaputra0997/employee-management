@@ -56,3 +56,10 @@ body {
   color: #ffffff !important;
 }
 
+.update-snackbar .mat-mdc-snackbar-surface {
+  --mdc-snackbar-container-color: #FFC312;
+  --mdc-snackbar-supporting-text-color: #130f40;
+  background-color: #FFC312 !important;
+  color: #130f40 !important;
+}
+

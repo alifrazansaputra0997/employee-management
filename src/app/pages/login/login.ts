@@ -10,6 +10,7 @@ import { Label } from 'src/app/config/Labels';
 import { CommonNotificationService } from '@services/common/common-notification/common-notification';
 import { Auth } from '@services/auth/auth';
 import { Router } from '@angular/router';
+import { employee } from '@config/interfaces/employee.interface';
 
 interface login {
   username: string;
@@ -66,8 +67,16 @@ export class Login implements OnInit {
         password: formData.password,
       }
       this.usersService.login().subscribe((res) => {
-        const employee = res.data;
-        const foundEmployee = employee.find((e) => e.username == payload.username);
+        let listEmployee: employee[] = [];
+        const dataEmployee = this.usersService.listEmployee;
+         if (dataEmployee.length == 0) {   // set signal, hanya sekali ketika init
+          listEmployee = res.data;
+          this.usersService.setListEmployee(listEmployee);
+        } else {
+          listEmployee = dataEmployee;
+        }
+
+        const foundEmployee = listEmployee.find((e) => e.username == payload.username);
         if (foundEmployee) {
           if (payload.password == foundEmployee.password) {
             delete foundEmployee.password;

@@ -32,6 +32,6 @@ export class ModalEmployee implements OnInit {
   ngOnInit(): void {
     this.employeeData = this.data;
     this.shortName = `${this.employeeData.firstName.charAt(0)}${this.employeeData.lastName.charAt(0)}`;
-    this.name = `${this.employeeData.firstName}${this.employeeData.lastName}`;
+    this.name = `${this.employeeData.firstName} ${this.employeeData.lastName}`;
   }
 }

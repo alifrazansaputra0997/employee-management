@@ -45,7 +45,8 @@ export const Label = {
         IS_REQUIRED: "is required!",
         LOGIN_FAILED: "Username or password is not valid!",
         IS_NOT_VALID: 'is not valid!',
-        PLEASE_FILL_FORM: "Please fill in all required fields."
+        PLEASE_FILL_FORM: "Please fill in all required fields.",
+        NOT_FOUND_ACCOUNT: "Employee is not found",
     },
     LABELS: {
         REMEMBER_ME: "Remember me?",
@@ -55,6 +56,7 @@ export const Label = {
         CONFIRMATION_DELETE: 'Are you sure want to delete this data?',
         SUCCESFULLY_DELETE: 'is Successfully Deleted',
         SUCCESFULLY_CREATED: 'is Successfully Created',
+        SUCCESFULLY_UPDATED: 'is Successfully Updated',
         NOENTRIESFOUND: "No matching data found",
     },
     BUTTONS: {

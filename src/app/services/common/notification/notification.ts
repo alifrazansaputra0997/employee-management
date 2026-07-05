@@ -33,4 +33,16 @@ export class Notification {
       }
     });
   }
+
+  successUpdate(data: any) {
+    this.snakeBarService.openFromComponent(SnakebarNotification, {
+      duration: 5 * 1000,
+      horizontalPosition: 'right',
+      verticalPosition: 'top',
+      panelClass: ['update-snackbar'],
+      data: {
+        message: `${data.firstName} ${this.label.LABELS.SUCCESFULLY_UPDATED}`
+      }
+    });
+  }
 }

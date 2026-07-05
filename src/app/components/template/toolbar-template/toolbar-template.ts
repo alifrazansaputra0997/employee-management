@@ -5,6 +5,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { Auth } from '@services/auth/auth';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ModalEmployee } from '@pages/master/employee/modal-employee/modal-employee';
+import { employee } from '@config/interfaces/employee.interface';
+import { MatDialog } from '@angular/material/dialog';
+
 @Component({
   selector: 'app-toolbar-template',
   imports: [
@@ -22,19 +26,38 @@ export class ToolbarTemplate implements OnInit {
   constructor(
     private authService: Auth,
     private router: Router,
-    private activeRoute: ActivatedRoute
-  ){ }
+    private dialog: MatDialog,
+  ) { }
 
   ngOnInit(): void {
-    
+
   }
 
   onClickMenu() {
     this.onOpenMenu.emit(true);
   }
 
-  onLogout(){
+  onLogout() {
     this.authService.removeUserLogin();
-  this.router.navigate(['login'])
+    this.router.navigate(['login'])
   }
+
+  openProfile() {
+    const user = this.authService.getLogin();
+    this.onView(user);
+  }
+
+  onView(row: employee) {
+    this.dialog.open(ModalEmployee, {
+      data: {
+        ...row
+      },
+      panelClass: 'square-dialog',
+      width: '80vw',
+      maxWidth: '800px',
+      minWidth: '350px',
+      minHeight: '400px'
+    })
+  }
+
 }

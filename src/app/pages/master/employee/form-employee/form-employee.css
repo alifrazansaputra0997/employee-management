@@ -33,3 +33,7 @@
 ::ng-deep .card .btn-cancel {
   background-color: #7f8c8d !important;
 }
+
+::ng-deep .card .btn-edit {
+  background-color: #F79F1F !important;
+}

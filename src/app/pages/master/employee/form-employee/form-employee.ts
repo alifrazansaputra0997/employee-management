@@ -8,7 +8,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 import { Users } from '@services/users/users';
 import { group } from '@config/interfaces/group.interface';
-import { CommonNotificationService } from '@services/common/common-notification/common-notification';
+import { ActivatedRoute } from '@angular/router';
 import { Label } from '@config/Labels';
 import { formSearchPayload } from '@config/interfaces/employee-list.interface';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -19,6 +19,8 @@ import { Router } from '@angular/router';
 import { employee } from '@config/interfaces/employee.interface';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Notification } from '@services/common/notification/notification';
+import { CommonNotification } from '@components/common-notification/common-notification';
+import { CommonNotificationService } from '@services/common/common-notification/common-notification';
 @Component({
   selector: 'app-form-employee',
   imports: [
@@ -48,12 +50,15 @@ export class FormEmployee implements OnInit {
   searchGroup = new FormControl('');
 
   DDLStatus: status[] = [];
+  isEdit: boolean = false;
 
   constructor(
     private loadingService: LoadingService,
     private userService: Users,
     private router: Router,
-    private notification: Notification
+    private notification: Notification,
+    private activeRoute: ActivatedRoute,
+    private commonNotif: CommonNotificationService
   ) { }
 
   ngOnInit(): void {
@@ -64,10 +69,30 @@ export class FormEmployee implements OnInit {
     this.searchGroup.valueChanges.subscribe(value => {
       this.filterGroup(value);
     });
+
+    this.activeRoute.queryParamMap.subscribe(params => {
+      if (params.get('id')) {
+        const id = Number(params.get('id'));
+        const employee = this.userService.listEmployee;
+        if (employee.length != 0) {
+          const found = employee.find(e => e.id == id);
+          if (found) {
+            this.isEdit = true;
+            this.setForm(found);
+          } else {
+            this.isEdit = false;
+            this.commonNotif.showInformation(this.label.ERROR_MSG.NOT_FOUND_ACCOUNT)
+          }
+        } else {
+          this.isEdit = false;
+        }
+      }
+    });
   }
 
   initForm() {
     this.formEmployee = new FormGroup({
+      id: new FormControl(''),
       username: new FormControl('', [Validators.required]),
       firstName: new FormControl('', [Validators.required]),
       lastName: new FormControl('', [Validators.required]),
@@ -82,6 +107,33 @@ export class FormEmployee implements OnInit {
       }, [Validators.required]),
       password: new FormControl('', [Validators.required]),
     });
+  }
+
+  onEdit() {
+    this.submitted = true;
+    if (this.formEmployee.invalid) {
+      this.formEmployee.markAllAsTouched();
+      this.formEmployee.markAllAsDirty();
+    } else {
+      const formData = this.formEmployee.value;
+      const payload: employee = {
+        id: formData.id,
+        username: formData.username,
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        password: formData.password,
+        basicSalary: formData.basicSalary,
+        birthDate: formData.birthDate,
+        description: formData.description ? formData.description : new Date(),
+        group: formData.group,
+        status: formData.status
+      };
+      this.userService.updateEmployee(payload);
+      this.notification.successUpdate(payload);
+      this.formEmployee.reset();
+      this.router.navigate(['master', 'employee', 'employee-list'])
+    }
   }
 
   onSave() {
@@ -101,14 +153,14 @@ export class FormEmployee implements OnInit {
         password: formData.password,
         basicSalary: formData.basicSalary,
         birthDate: formData.birthDate,
-        description: formData.description,
+        description: formData.description ? formData.description : new Date(),
         group: formData.group,
         status: formData.status
       };
-
+      console.log('payload', payload)
       this.userService.addEmployee(payload);
       this.notification.successCreate(payload);
-
+      this.formEmployee.reset();
       this.router.navigate(['master', 'employee', 'employee-list'])
     }
   }
@@ -142,6 +194,22 @@ export class FormEmployee implements OnInit {
         this.DDLStatus = res.data;
         this.loadingService.setLoading(false);
       }
+    })
+  }
+
+  setForm(data: employee) {
+    this.formEmployee.setValue({
+      id: data.id,
+      username: data.username,
+      firstName: data.firstName,
+      lastName: data.lastName,
+      email: data.email,
+      password: data.password,
+      basicSalary: data.basicSalary,
+      birthDate: data.birthDate,
+      description: data.description,
+      group: data.group,
+      status: data.status
     })
   }
 }
