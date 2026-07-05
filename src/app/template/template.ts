@@ -6,7 +6,7 @@ import { SideMenu } from '@components/template/side-menu/side-menu';
 import { Breadcrumb } from '@components/breadcrumb/breadcrumb';
 import { MenuItem } from '@config/interfaces/menuItem.interface';
 import { LoadingService } from '@services/common/loading-service/loading-service';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 @Component({
   selector: 'app-template',
   standalone: true,
@@ -43,21 +43,8 @@ export class Template implements OnInit {
         {
           id: 3,
           title: 'Employee',
-          route: '/master/employee',
-          children: [
-            {
-              id: 5,
-              title: 'List Employee',
-              route: '/master/employee/employee-list',
-              children: []
-            },
-            {
-              id: 4,
-              title: 'Add Employee',
-              route: '/master/employee/add-employee',
-              children: []
-            },
-          ]
+          route: '/master/employee/employee-list',
+          children: []
         }
       ]
     }

@@ -12,6 +12,11 @@ import { DatePipe, CurrencyPipe } from '@angular/common';
 import { formSearchPayload } from '@config/interfaces/employee-list.interface';
 import { LoadingService } from '@services/common/loading-service/loading-service';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { ConfirmationService } from '@services/common/confirmation-service/confirmation-service';
+import { Label } from '@config/Labels';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { SnakebarNotification } from '@components/snakebar-notification/snakebar-notification';
+
 @Component({
   selector: 'app-employee-list',
   imports: [
@@ -22,12 +27,14 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
     MatButtonModule,
     DatePipe,
     CurrencyPipe,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSnackBarModule
   ],
   templateUrl: './employee-list.html',
   styleUrl: './employee-list.css',
 })
 export class EmployeeList implements OnInit {
+  label = Label;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
@@ -46,17 +53,13 @@ export class EmployeeList implements OnInit {
     'group'
   ];
   dataSource: MatTableDataSource<employee> = new MatTableDataSource<employee>([]);
-  configPagination = {
-    pageIndex: 0, // currentPage
-    dataLength: 0, // totalData
-    pageSize: 10, // perPage
-  };
-
 
   constructor(
     private router: Router,
     private userService: Users,
-    private loadingService: LoadingService
+    private loadingService: LoadingService,
+    private confirmationService: ConfirmationService,
+    private snakeBarService: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -120,12 +123,31 @@ export class EmployeeList implements OnInit {
     })
   }
 
-  onEdit(row: any) {
-
+  onEdit(row: employee) {
+    this.router.navigate(['master', 'employee', 'edit-employee'], {
+      queryParams: {
+        id: row.id
+      }
+    })
   }
 
-  onDelete(row: any) {
-
+  onDelete(row: employee) {
+    const confirmation = this.confirmationService.confirmation(this.label.LABELS.CONFIRMATION_DELETE);
+    confirmation.afterClosed().subscribe(res => {
+      if (res && res.response == 'yes') {
+        this.dataTable = this.dataTable.filter(data => data.id !== row.id);
+        this.dataSource.data = this.dataTable;
+        this.snakeBarService.openFromComponent(SnakebarNotification, {
+          duration: 5 * 1000,
+          horizontalPosition: 'right',
+          verticalPosition: 'top',
+          panelClass: ['delete-snackbar'],
+          data: {
+            message: `${row.id} - ${row.firstName} ${row.lastName} ${this.label.LABELS.SUCCESFULLY_DELETE}`
+          }
+        });
+      }
+    })
   }
 
   matSortChange(event: any) {

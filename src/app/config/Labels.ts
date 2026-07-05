@@ -17,10 +17,15 @@ export const Label = {
     LABELS: {
         REMEMBER_ME: "Remember me?",
         SIGN_IN: "Sign In",
-        NOTIFICATIONS: "Notifications"
+        NOTIFICATIONS: "Notifications",
+        CONFIRMATION: 'Confirmation',
+        CONFIRMATION_DELETE: 'Are you sure want to delete this data?',
+        SUCCESFULLY_DELETE: 'is Successfully Deleted'
     },
     BUTTONS: {
         SIGN_IN: "SIGN IN",
-        OK: "Ok"
+        OK: "Ok",
+        CANCEL: 'Cancel',
+        YES: 'Ya'
     }
 }

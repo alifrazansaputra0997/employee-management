@@ -38,7 +38,20 @@ body {
   padding: 0 !important;
 }
 
-/* mat-dialog global config CSS */
 .square-dialog .mat-mdc-dialog-surface {
   border-radius: 0px !important;
+}
+
+.success-snackbar .mat-mdc-snackbar-surface {
+  --mdc-snackbar-container-color: #4caf50;
+  --mdc-snackbar-supporting-text-color: #ffffff;
+  background-color: #4caf50 !important;
+  color: #ffffff !important;
+}
+
+.delete-snackbar .mat-mdc-snackbar-surface {
+  --mdc-snackbar-container-color: #eb2f06;
+  --mdc-snackbar-supporting-text-color: #ffffff;
+  background-color: #eb2f06 !important;
+  color: #ffffff !important;
 }

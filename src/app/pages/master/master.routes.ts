@@ -2,20 +2,25 @@ import { Routes } from "@angular/router";
 
 export const masterRoutes: Routes = [
     {
-        path: '',
-        redirectTo: 'master/employee',
-        pathMatch: 'full'
-    },
-    {
         path: 'employee',
         data: {
-             breadcrumb: 'Employee'
+            breadcrumb: 'Employee'
         },
         loadComponent: () => import('./employee/employee').then(m => m.Employee),
         children: [
             {
                 path: 'add-employee',
-                loadComponent: () => import('./employee/add-employee/add-employee').then(m => m.AddEmployee)
+                data: {
+                    breadcrumb: 'Add Employee'
+                },
+                loadComponent: () => import('./employee/form-employee/form-employee').then(m => m.FormEmployee)
+            },
+            {
+                path: 'edit-employee',
+                data: {
+                    breadcrumb: 'Edit Employee'
+                },
+                loadComponent: () => import('./employee/form-employee/form-employee').then(m => m.FormEmployee)
             },
             {
                 path: 'employee-list',
