@@ -22,7 +22,6 @@ interface login {
     ReactiveFormsModule,
     MatFormFieldModule,
     MatButtonModule,
-    MatFormFieldModule,
     MatInputModule,
     MatCheckboxModule
   ],

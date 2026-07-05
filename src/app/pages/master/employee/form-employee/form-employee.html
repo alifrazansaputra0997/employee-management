@@ -1,1 +1,57 @@
-<p>form-employee works!</p>
+<mat-card class="card mt-4 bg-white" appearance="outlined">
+    <mat-card-header>
+        <mat-card-title class="font-inter text-md">Form Employee</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="form-employee">
+        <form [formGroup]="formEmployee">
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-6">
+                <mat-form-field class="w-full text-sm primeng-input" appearance="outline">
+                    <mat-label class="font-inter">First Name</mat-label>
+                    <input matInput class="text-smName" formControlName="firstName" />
+                    <mat-hint class="text-red-600">XXX</mat-hint>
+                </mat-form-field>
+                <mat-form-field class="w-full text-sm primeng-input" appearance="outline">
+                    <mat-label class="font-inter">Last Name</mat-label>
+                    <input matInput class="text-smName" formControlName="lastName" />
+                    <mat-hint class="text-red-600">XXX</mat-hint>
+                </mat-form-field>
+                <mat-form-field class="w-full text-sm primeng-input" appearance="outline">
+                    <mat-label class="font-inter">Email</mat-label>
+                    <input matInput class="text-smName" formControlName="email" />
+                    <mat-hint class="text-red-600">XXX</mat-hint>
+                </mat-form-field>
+                <mat-form-field class="w-full text-sm primeng-input" appearance="outline">
+                    <mat-label class="font-inter">Birth Date</mat-label>
+                    <input matInput class="text-smName" formControlName="birthDate" />
+                    <mat-hint class="text-red-600">XXX</mat-hint>
+                </mat-form-field>
+                <mat-form-field class="w-full text-sm primeng-input" appearance="outline">
+                    <mat-label class="font-inter">Basic Salary</mat-label>
+                    <input matInput class="text-smName" formControlName="basicSalary" />
+                    <mat-hint class="text-red-600">XXX</mat-hint>
+                </mat-form-field>
+                <mat-form-field class="w-full text-sm primeng-input" appearance="outline">
+                    <mat-label class="font-inter">Status</mat-label>
+                    <input matInput class="text-smName" formControlName="status" />
+                    <mat-hint class="text-red-600">XXX</mat-hint>
+                </mat-form-field>
+                <mat-form-field class="w-full text-sm primeng-input" appearance="outline">
+                    <mat-label class="font-inter">Group</mat-label>
+                    <input matInput class="text-smName" formControlName="group" />
+                    <mat-hint class="text-red-600">XXX</mat-hint>
+                </mat-form-field>
+                <mat-form-field class="w-full text-sm primeng-input" appearance="outline">
+                    <mat-label class="font-inter">Description</mat-label>
+                    <input matInput class="text-smName" formControlName="description" />
+                    <mat-hint class="text-red-600">XXX</mat-hint>
+                </mat-form-field>
+            </div>
+        </form>
+        <mat-card-actions class="justify-between flex items-center mt-2">
+            <div class="left-act gap-3 flex">
+                <button class="btn btn-save font-inter" matButton="filled" (click)="onSave()">Save</button>
+                <button class="btn btn-cancel font-inter" matButton="filled" (click)="onCancel()">Cancel</button>
+            </div>
+        </mat-card-actions>
+    </mat-card-content>
+</mat-card>

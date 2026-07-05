@@ -1,0 +1,35 @@
+.card {
+  border-radius: 5px;
+}
+
+.card .form-employee {
+  padding-top: 35px !important;
+}
+
+.card .font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+.card .mat-mdc-card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+::ng-deep .card .mat-mdc-card-actions{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+::ng-deep .card .btn {
+  border-radius: 4px !important;
+}
+
+::ng-deep .card .btn-find {
+  background-color: #341f97 !important;
+}
+::ng-deep .card .btn-create {
+  background-color: #4cd137 !important;
+}
+
+::ng-deep .card .btn-reset {
+  background-color: #7f8c8d !important;
+}
