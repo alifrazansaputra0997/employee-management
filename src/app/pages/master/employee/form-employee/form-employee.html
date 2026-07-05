@@ -57,8 +57,11 @@
                 </mat-form-field>
                 <mat-form-field class="w-full text-sm primeng-input" appearance="outline">
                     <mat-label class="font-inter">{{ label.FIELDS.STATUS.LABEL }}</mat-label>
-                    <input matInput class="text-sm" formControlName="status"
-                        [placeholder]="label.FIELDS.STATUS.PLACEHOLDER" />
+                    <mat-select formControlName="status" name="status">
+                        @for (status of DDLStatus; track status.id) {
+                        <mat-option [value]="status.status">{{status.status}}</mat-option>
+                        }
+                    </mat-select>
                     @if(formEmployee.get('status')?.hasError('required') && submitted){
                     <mat-error class="text-red-600">{{ label.FIELDS.STATUS.LABEL }}
                         {{label.ERROR_MSG.IS_REQUIRED}}</mat-error>
@@ -84,7 +87,7 @@
                 <mat-form-field class="w-full text-sm primeng-input" appearance="outline">
                     <mat-label class="font-inter">{{ label.FIELDS.DESCRIPTION.LABEL }}</mat-label>
                     <input matInput class="text-sm" formControlName="description" />
-                     @if(formEmployee.get('description')?.hasError('required') && submitted){
+                    @if(formEmployee.get('description')?.hasError('required') && submitted){
                     <mat-error class="text-red-600">{{ label.FIELDS.DESCRIPTION.LABEL }}
                         {{label.ERROR_MSG.IS_REQUIRED}}</mat-error>
                     }

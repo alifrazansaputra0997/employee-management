@@ -14,6 +14,7 @@ import { formSearchPayload } from '@config/interfaces/employee-list.interface';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { LoadingService } from '@services/common/loading-service/loading-service';
+import { status } from '@config/interfaces/status.interface';
 @Component({
   selector: 'app-form-employee',
   imports: [
@@ -34,7 +35,7 @@ import { LoadingService } from '@services/common/loading-service/loading-service
 export class FormEmployee implements OnInit {
   label = Label;
   formEmployee!: FormGroup;
-  submitted:boolean = false;
+  submitted: boolean = false;
 
   readonly maxDate = new Date();
 
@@ -42,14 +43,17 @@ export class FormEmployee implements OnInit {
   DDLGroup: group[] = [];
   searchGroup = new FormControl('');
 
+  DDLStatus: status[] = [];
+
   constructor(
-     private loadingService: LoadingService,
-     private userService: Users,
+    private loadingService: LoadingService,
+    private userService: Users,
   ) { }
 
   ngOnInit(): void {
     this.initForm();
     this.initDDLGroup();
+    this.initDDLStatus();
 
     this.searchGroup.valueChanges.subscribe(value => {
       this.filterGroup(value);
@@ -71,14 +75,12 @@ export class FormEmployee implements OnInit {
   }
 
   onSave() {
-      this.submitted = true;
-    if(this.formEmployee.invalid){
-      console.log('HERE')
+    this.submitted = true;
+    if (this.formEmployee.invalid) {
       this.formEmployee.markAllAsTouched();
       this.formEmployee.markAllAsDirty();
-
     } else {
-
+      
     }
   }
 
@@ -99,6 +101,16 @@ export class FormEmployee implements OnInit {
       if (res.data) {
         this.DDLGroup = res.data;
         this.filteredGroup = [...this.DDLGroup];
+        this.loadingService.setLoading(false);
+      }
+    })
+  }
+
+  initDDLStatus() {
+    this.loadingService.setLoading(true);
+     this.userService.getStatus().subscribe(res => {
+      if (res.data) {
+        this.DDLStatus = res.data;
         this.loadingService.setLoading(false);
       }
     })
