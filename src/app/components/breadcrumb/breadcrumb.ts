@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { ActivatedRoute, NavigationEnd } from '@angular/router';
 import { BreadcrumbItem } from '@config/interfaces/breadcrumb.interface';
-import { BreadcrumbService } from '@services/breadcrumb/breadcrumb';
+import { BreadcrumbService } from '@services/common/breadcrumb/breadcrumb';
 import { RouterLink, Router } from '@angular/router';
 import { filter } from 'rxjs';
 @Component({

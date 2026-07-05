@@ -1,0 +1,23 @@
+::ng-deep .card .btn {
+  border-radius: 4px !important;
+}
+::ng-deep .card .btn-edit {
+  background-color: #ffb900 !important;
+}
+::ng-deep .card .btn-delete {
+  background-color: #eb2f06 !important;
+}
+
+::ng-deep .card .mat-elevation-z8 .action {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+::ng-deep .card .mat-elevation-z8 .mat-sort-header-container {
+  justify-content: center;
+}
+
+::ng-deep .card .mat-elevation-z8 .mat-mdc-header-cell {
+  text-align: center;
+}

@@ -6,24 +6,35 @@ import { Users } from '@services/users/users';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { employee } from '@config/interfaces/employee.interface';
 import { MatCardModule } from '@angular/material/card';
-import { Paginator } from '@components/paginator/paginator';
 import { MatSort, Sort, MatSortModule } from '@angular/material/sort';
+import { MatButtonModule } from '@angular/material/button';
+import { DatePipe, CurrencyPipe } from '@angular/common';
+import { formSearchPayload } from '@config/interfaces/employee-list.interface';
+import { LoadingService } from '@services/common/loading-service/loading-service';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 @Component({
   selector: 'app-employee-list',
   imports: [
     FormSearchingEmployee,
     MatTableModule,
     MatCardModule,
-    Paginator,
-    MatSortModule
+    MatSortModule,
+    MatButtonModule,
+    DatePipe,
+    CurrencyPipe,
+    MatPaginatorModule
   ],
   templateUrl: './employee-list.html',
   styleUrl: './employee-list.css',
 })
 export class EmployeeList implements OnInit {
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+
   DDLGroup: group[] = [];
   filteredGroup: group[] = [];
   dataTable: any[] = [];
+  dataTemporaryTable: any[] = [];
 
   displayedColumns: string[] = [
     'action',
@@ -40,11 +51,12 @@ export class EmployeeList implements OnInit {
     dataLength: 0, // totalData
     pageSize: 10, // perPage
   };
-  @ViewChild(MatSort) sort!: MatSort;
+
 
   constructor(
     private router: Router,
     private userService: Users,
+    private loadingService: LoadingService
   ) { }
 
   ngOnInit(): void {
@@ -53,16 +65,42 @@ export class EmployeeList implements OnInit {
   }
 
   initDDLGroup() {
+    this.loadingService.setLoading(true);
     this.userService.getGroup().subscribe(res => {
       if (res.data) {
         this.DDLGroup = res.data;
         this.filteredGroup = [...this.DDLGroup];
+        this.loadingService.setLoading(false);
       }
     })
   }
 
-  onFind(e: any) {
-    console.log('FORM', e);
+  onFind(e: formSearchPayload) {
+    this.loadingService.setLoading(true);
+    const payload: formSearchPayload = {
+      group: e.group != '' ? e.group : '',
+      name: e.name
+    };
+    const payloadName = String(payload.name).toLowerCase().trim();
+    const payloadGroup = payload.group;
+    const found = this.dataTemporaryTable.filter((data: any) => {
+      const fullName = String(`${data.firstName} ${data.lastName}`).toLowerCase();
+
+      const matchName = fullName.includes(payloadName);
+      const matchGroup = data.group == payloadGroup;
+      return matchName && matchGroup;
+    });
+    this.dataSource.data = found;
+    this.paginator.firstPage();
+    this.loadingService.setLoading(false);
+  }
+
+  onResetForm(e: any) {
+    this.loadingService.setLoading(true);
+    this.dataTable = [...this.dataTemporaryTable];
+    this.dataTemporaryTable = [...this.dataTemporaryTable];
+    this.dataSource.data = this.dataTable;
+    this.loadingService.setLoading(false);
   }
 
   onAddEmployee(e: any) {
@@ -70,11 +108,14 @@ export class EmployeeList implements OnInit {
   }
 
   getEmployee() {
+    this.loadingService.setLoading(true);
     this.userService.getUsers().subscribe(res => {
       if (res.data) {
-        const dataTable = res.data;
-        this.dataTable = dataTable;
-        console.log('this.dataSource', dataTable)
+        this.loadingService.setLoading(false);
+        this.dataTable = [...res.data];
+        this.dataTemporaryTable = [...res.data];
+
+        this.dataSource.data = this.dataTable;
       }
     })
   }
@@ -85,10 +126,6 @@ export class EmployeeList implements OnInit {
 
   onDelete(row: any) {
 
-  }
-
-  onDataReady(tableReady: any) {
-    this.dataSource = new MatTableDataSource(tableReady);
   }
 
   matSortChange(event: any) {
@@ -103,5 +140,7 @@ export class EmployeeList implements OnInit {
 
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
   }
+
 }

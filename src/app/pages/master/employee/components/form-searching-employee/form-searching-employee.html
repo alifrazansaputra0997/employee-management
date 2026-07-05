@@ -24,9 +24,17 @@
                 </mat-form-field>
             </div>
         </form>
-        <mat-card-actions class="justify-center flex items-center gap-3 mt-2">
-            <button class="btn btn-find font-inter" matButton="filled" (click)="onFind()">Find</button>
-            <button class="btn btn-create font-inter" matButton="filled" (click)="onAddEmployee()">Add Employee</button>
+        <mat-card-actions class="justify-between flex items-center mt-2">
+            <div class="left-act gap-3 flex">
+                <button class="btn btn-find font-inter" matButton="filled" (click)="onFind()">Find</button>
+                <button class="btn btn-create font-inter" matButton="filled" (click)="onAddEmployee()">Add
+                    Employee</button>
+            </div>
+            <div class="right-act">
+                @if(showButtonReset){
+                <button class="btn btn-reset font-inter" matButton="filled" (click)="onResetForm()">Reset</button>
+                }
+            </div>
         </mat-card-actions>
     </mat-card-content>
 </mat-card>

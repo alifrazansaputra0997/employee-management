@@ -8,8 +8,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 import { Users } from '@services/users/users';
 import { group } from '@config/interfaces/group.interface';
-import { CommonNotificationService } from '@services/common-notification/common-notification';
+import { CommonNotificationService } from '@services/common/common-notification/common-notification';
 import { Label } from '@config/Labels';
+import { formSearchPayload } from '@config/interfaces/employee-list.interface';
 
 @Component({
   selector: 'app-form-searching-employee',
@@ -29,12 +30,14 @@ export class FormSearchingEmployee implements OnInit {
   label = Label;
   formSearch!: FormGroup;
   searchEmployee = new FormControl('');
+  showButtonReset: boolean = false;
 
   @Input() DDLGroup: group[] = [];
   @Input() filteredGroup: group[] = [];
 
-  @Output() onFindAct = new EventEmitter();
+  @Output() onFindAct = new EventEmitter<formSearchPayload>();
   @Output() onAddEmployeeAct = new EventEmitter();
+  @Output() onResetFormAct = new EventEmitter();
 
   constructor(
     private userService: Users,
@@ -46,13 +49,21 @@ export class FormSearchingEmployee implements OnInit {
     this.searchEmployee.valueChanges.subscribe(value => {
       this.filterGroup(value);
     });
+    this.formSearch.valueChanges.subscribe(value => {
+      if (value.name != '' || value.group != '') {
+        this.showButtonReset = true;
+      } else {
+        this.showButtonReset = false;
+        this.onResetFormAct.emit(true)
+      }
+    });
   }
 
 
   initForm() {
     this.formSearch = new FormGroup({
       name: new FormControl('', [Validators.required]),
-      group: new FormControl(''),
+      group: new FormControl('', [Validators.required])
     });
   }
 
@@ -67,6 +78,7 @@ export class FormSearchingEmployee implements OnInit {
   onFind() {
     if (this.formSearch.invalid) {
       this.commonNotificationService.showInformation(this.label.ERROR_MSG.PLEASE_FILL_FORM);
+      this.formSearch.markAllAsTouched();
     } else {
       const payload = this.formSearch.value;
       this.onFindAct.emit(payload)
@@ -75,5 +87,11 @@ export class FormSearchingEmployee implements OnInit {
 
   onAddEmployee() {
     this.onAddEmployeeAct.emit(true);
+  }
+
+  onResetForm() {
+    this.formSearch.reset();
+    this.showButtonReset = false;
+    this.onResetFormAct.emit(true)
   }
 }

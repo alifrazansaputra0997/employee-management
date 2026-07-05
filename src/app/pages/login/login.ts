@@ -7,7 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { Users } from '@services/users/users';
 import { Label } from 'src/app/config/Labels';
-import { CommonNotificationService } from '@services/common-notification/common-notification';
+import { CommonNotificationService } from '@services/common/common-notification/common-notification';
 import { Auth } from '@services/auth/auth';
 import { Router } from '@angular/router';
 
