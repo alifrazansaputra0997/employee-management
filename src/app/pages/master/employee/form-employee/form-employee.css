@@ -30,6 +30,6 @@
   background-color: #4cd137 !important;
 }
 
-::ng-deep .card .btn-reset {
+::ng-deep .card .btn-cancel {
   background-color: #7f8c8d !important;
 }

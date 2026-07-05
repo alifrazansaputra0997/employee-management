@@ -6,52 +6,94 @@
         <form [formGroup]="formEmployee">
             <div class="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-6">
                 <mat-form-field class="w-full text-sm primeng-input" appearance="outline">
-                    <mat-label class="font-inter">First Name</mat-label>
-                    <input matInput class="text-smName" formControlName="firstName" />
-                    <mat-hint class="text-red-600">XXX</mat-hint>
+                    <mat-label class="font-inter">{{ label.FIELDS.FIRSTNAME.LABEL }}</mat-label>
+                    <input matInput class="text-sm" formControlName="firstName"
+                        [placeholder]="label.FIELDS.FIRSTNAME.PLACEHOLDER" />
+                    @if(formEmployee.get('firstName')?.hasError('required') && submitted){
+                    <mat-error class="text-red-600">{{ label.FIELDS.FIRSTNAME.LABEL }}
+                        {{label.ERROR_MSG.IS_REQUIRED}}</mat-error>
+                    }
                 </mat-form-field>
                 <mat-form-field class="w-full text-sm primeng-input" appearance="outline">
-                    <mat-label class="font-inter">Last Name</mat-label>
-                    <input matInput class="text-smName" formControlName="lastName" />
-                    <mat-hint class="text-red-600">XXX</mat-hint>
+                    <mat-label class="font-inter">{{ label.FIELDS.LASTNAME.LABEL }}</mat-label>
+                    <input matInput class="text-sm" formControlName="lastName"
+                        [placeholder]="label.FIELDS.LASTNAME.PLACEHOLDER" />
+                    @if(formEmployee.get('lastName')?.hasError('required') && submitted){
+                    <mat-error class="text-red-600">{{ label.FIELDS.LASTNAME.LABEL }}
+                        {{label.ERROR_MSG.IS_REQUIRED}}</mat-error>
+                    }
                 </mat-form-field>
                 <mat-form-field class="w-full text-sm primeng-input" appearance="outline">
-                    <mat-label class="font-inter">Email</mat-label>
-                    <input matInput class="text-smName" formControlName="email" />
-                    <mat-hint class="text-red-600">XXX</mat-hint>
+                    <mat-label class="font-inter">{{ label.FIELDS.EMAIL.LABEL }}</mat-label>
+                    <input matInput class="text-sm" formControlName="email"
+                        [placeholder]="label.FIELDS.EMAIL.PLACEHOLDER" />
+                    @if(formEmployee.get('email')?.hasError('required') && submitted){
+                    <mat-error class="text-red-600">{{ label.FIELDS.EMAIL.LABEL }}
+                        {{label.ERROR_MSG.IS_REQUIRED}}</mat-error>
+                    } @else if (formEmployee.get('email')?.hasError('email') && submitted) {
+                    <mat-error class="text-red-600">{{ label.FIELDS.EMAIL.LABEL }}
+                        {{label.ERROR_MSG.IS_NOT_VALID}}</mat-error>
+                    }
                 </mat-form-field>
                 <mat-form-field class="w-full text-sm primeng-input" appearance="outline">
-                    <mat-label class="font-inter">Birth Date</mat-label>
-                    <input matInput class="text-smName" formControlName="birthDate" />
-                    <mat-hint class="text-red-600">XXX</mat-hint>
+                    <mat-label class="font-inter">{{ label.FIELDS.BIRTHDATE.LABEL }}</mat-label>
+                    <input matInput formControlName="birthDate" [max]="maxDate" [matDatepicker]="picker"
+                        [placeholder]="label.FIELDS.BIRTHDATE.PLACEHOLDER" />
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                    @if(formEmployee.get('birthDate')?.hasError('required') && submitted){
+                    <mat-error class="text-red-600">{{ label.FIELDS.BIRTHDATE.LABEL }}
+                        {{label.ERROR_MSG.IS_REQUIRED}}</mat-error>
+                    }
                 </mat-form-field>
                 <mat-form-field class="w-full text-sm primeng-input" appearance="outline">
-                    <mat-label class="font-inter">Basic Salary</mat-label>
-                    <input matInput class="text-smName" formControlName="basicSalary" />
-                    <mat-hint class="text-red-600">XXX</mat-hint>
+                    <mat-label class="font-inter">{{ label.FIELDS.BASIC_SALARY.LABEL }}</mat-label>
+                    <input matInput class="text-sm" type="number" formControlName="basicSalary"
+                        [placeholder]="label.FIELDS.BASIC_SALARY.PLACEHOLDER" />
+                    @if(formEmployee.get('basicSalary')?.hasError('required') && submitted){
+                    <mat-error class="text-red-600">{{ label.FIELDS.BASIC_SALARY.LABEL }}
+                        {{label.ERROR_MSG.IS_REQUIRED}}</mat-error>
+                    }
                 </mat-form-field>
                 <mat-form-field class="w-full text-sm primeng-input" appearance="outline">
-                    <mat-label class="font-inter">Status</mat-label>
-                    <input matInput class="text-smName" formControlName="status" />
-                    <mat-hint class="text-red-600">XXX</mat-hint>
+                    <mat-label class="font-inter">{{ label.FIELDS.STATUS.LABEL }}</mat-label>
+                    <input matInput class="text-sm" formControlName="status"
+                        [placeholder]="label.FIELDS.STATUS.PLACEHOLDER" />
+                    @if(formEmployee.get('status')?.hasError('required') && submitted){
+                    <mat-error class="text-red-600">{{ label.FIELDS.STATUS.LABEL }}
+                        {{label.ERROR_MSG.IS_REQUIRED}}</mat-error>
+                    }
                 </mat-form-field>
                 <mat-form-field class="w-full text-sm primeng-input" appearance="outline">
-                    <mat-label class="font-inter">Group</mat-label>
-                    <input matInput class="text-smName" formControlName="group" />
-                    <mat-hint class="text-red-600">XXX</mat-hint>
+                    <mat-label class="font-inter">{{ label.FIELDS.GROUP.LABEL }}</mat-label>
+                    <mat-select formControlName="group">
+                        <mat-option>
+                            <ngx-mat-select-search [placeholderLabel]="'Search'" [formControl]="searchGroup"
+                                [noEntriesFoundLabel]="label.LABELS.NOENTRIESFOUND">
+                            </ngx-mat-select-search>
+                        </mat-option>
+                        @for (ddl of filteredGroup; track ddl.id) {
+                        <mat-option [value]="ddl.group">{{ddl.group}}</mat-option>
+                        }
+                    </mat-select>
+                    @if(formEmployee.get('group')?.hasError('required') && submitted){
+                    <mat-error class="text-red-600">{{ label.FIELDS.GROUP.LABEL }}
+                        {{label.ERROR_MSG.IS_REQUIRED}}</mat-error>
+                    }
                 </mat-form-field>
                 <mat-form-field class="w-full text-sm primeng-input" appearance="outline">
-                    <mat-label class="font-inter">Description</mat-label>
-                    <input matInput class="text-smName" formControlName="description" />
-                    <mat-hint class="text-red-600">XXX</mat-hint>
+                    <mat-label class="font-inter">{{ label.FIELDS.DESCRIPTION.LABEL }}</mat-label>
+                    <input matInput class="text-sm" formControlName="description" />
+                     @if(formEmployee.get('description')?.hasError('required') && submitted){
+                    <mat-error class="text-red-600">{{ label.FIELDS.DESCRIPTION.LABEL }}
+                        {{label.ERROR_MSG.IS_REQUIRED}}</mat-error>
+                    }
                 </mat-form-field>
             </div>
         </form>
-        <mat-card-actions class="justify-between flex items-center mt-2">
-            <div class="left-act gap-3 flex">
-                <button class="btn btn-save font-inter" matButton="filled" (click)="onSave()">Save</button>
-                <button class="btn btn-cancel font-inter" matButton="filled" (click)="onCancel()">Cancel</button>
-            </div>
+        <mat-card-actions class="justify-start gap-4 flex items-center mt-2">
+            <button class="btn btn-create font-inter" matButton="filled" (click)="onSave()">Save</button>
+            <button class="btn btn-cancel font-inter" matButton="filled" (click)="onCancel()">Cancel</button>
         </mat-card-actions>
     </mat-card-content>
 </mat-card>

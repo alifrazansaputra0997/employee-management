@@ -11,7 +11,9 @@ import { group } from '@config/interfaces/group.interface';
 import { CommonNotificationService } from '@services/common/common-notification/common-notification';
 import { Label } from '@config/Labels';
 import { formSearchPayload } from '@config/interfaces/employee-list.interface';
-
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { provideNativeDateAdapter } from '@angular/material/core';
+import { LoadingService } from '@services/common/loading-service/loading-service';
 @Component({
   selector: 'app-form-employee',
   imports: [
@@ -21,17 +23,37 @@ import { formSearchPayload } from '@config/interfaces/employee-list.interface';
     ReactiveFormsModule,
     NgxMatSelectSearchModule,
     MatFormFieldModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDatepickerModule,
+    NgxMatSelectSearchModule
   ],
+  providers: [provideNativeDateAdapter()],
   templateUrl: './form-employee.html',
   styleUrl: './form-employee.css',
 })
 export class FormEmployee implements OnInit {
+  label = Label;
   formEmployee!: FormGroup;
-  constructor() { }
+  submitted:boolean = false;
+
+  readonly maxDate = new Date();
+
+  filteredGroup: group[] = [];
+  DDLGroup: group[] = [];
+  searchGroup = new FormControl('');
+
+  constructor(
+     private loadingService: LoadingService,
+     private userService: Users,
+  ) { }
 
   ngOnInit(): void {
     this.initForm();
+    this.initDDLGroup();
+
+    this.searchGroup.valueChanges.subscribe(value => {
+      this.filterGroup(value);
+    });
   }
 
   initForm() {
@@ -39,7 +61,7 @@ export class FormEmployee implements OnInit {
       username: new FormControl('', [Validators.required]),
       firstName: new FormControl('', [Validators.required]),
       lastName: new FormControl('', [Validators.required]),
-      email: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required, Validators.email]),
       birthDate: new FormControl('', [Validators.required]),
       basicSalary: new FormControl('', [Validators.required]),
       status: new FormControl('', [Validators.required]),
@@ -49,10 +71,36 @@ export class FormEmployee implements OnInit {
   }
 
   onSave() {
+      this.submitted = true;
+    if(this.formEmployee.invalid){
+      console.log('HERE')
+      this.formEmployee.markAllAsTouched();
+      this.formEmployee.markAllAsDirty();
 
+    } else {
+
+    }
   }
 
   onCancel() {
 
+  }
+
+  filterGroup(value: string | null) {
+    const keyword = (value ?? '').toLowerCase().trim();
+    this.filteredGroup = this.DDLGroup.filter(group =>
+      group.group.toLowerCase().includes(keyword)
+    );
+  }
+
+  initDDLGroup() {
+    this.loadingService.setLoading(true);
+    this.userService.getGroup().subscribe(res => {
+      if (res.data) {
+        this.DDLGroup = res.data;
+        this.filteredGroup = [...this.DDLGroup];
+        this.loadingService.setLoading(false);
+      }
+    })
   }
 }
