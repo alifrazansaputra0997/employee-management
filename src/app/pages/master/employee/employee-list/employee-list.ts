@@ -139,8 +139,20 @@ export class EmployeeList implements OnInit {
   }
 
   ngAfterViewInit() {
-    this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+
+    this.dataSource.sortingDataAccessor = (item, property) => {
+      switch (property) {
+        case 'name':
+          return `${item.firstName} ${item.lastName}`;
+        case 'birthDate':
+          return new Date(item.birthDate).getTime();
+
+        default:
+          return item[property as keyof employee];
+      }
+    }
   }
 
 }
